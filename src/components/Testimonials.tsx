@@ -172,7 +172,7 @@ export const Testimonials: React.FC = () => {
           className="!pb-16"
           style={{ '--swiper-pagination-color': '#e83e8c', '--swiper-pagination-bullet-inactive-color': '#999' } as React.CSSProperties}
         >
-          {testimonials.map((test, idx) => (
+          {testimonials.map((test) => (
             <SwiperSlide key={test.id} className="h-auto">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

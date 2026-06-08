@@ -92,9 +92,9 @@ export const AboutPage: React.FC = () => {
             </div>
             
             <div className="relative flex justify-center">
-               <div className="w-full max-w-[400px] aspect-square rounded-[2rem] bg-white border border-primary/20 flex items-center justify-center p-8 relative shadow-premium-hover hover:scale-105 transition-transform duration-500">
-                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] rounded-[2rem]" />
-                  <GlobeHemisphereWest size={120} className="text-primary opacity-80 relative z-10 drop-shadow-sm animate-float" weight="duotone" />
+               <div className="w-full max-w-[400px] aspect-square rounded-[2rem] bg-white border border-primary/20 flex items-center justify-center p-2 relative shadow-premium-hover hover:scale-105 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] rounded-[2rem] z-0" />
+                  <img src="/our_journey.png" alt="Our Journey" className="w-full h-full object-cover rounded-[1.6rem] relative z-10" />
                </div>
             </div>
           </div>

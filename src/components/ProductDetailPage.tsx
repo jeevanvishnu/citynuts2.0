@@ -10,7 +10,6 @@ import {
   ArrowRight,
   CheckCircle,
   Clock,
-  InstagramLogo,
   FacebookLogo,
   WhatsappLogo,
   Copy,
@@ -28,6 +27,7 @@ import {
   CaretRight,
   CaretLeft,
   ShareNetwork,
+  GlobeHemisphereWest,
 } from '@phosphor-icons/react';
 import type { CartItem } from './CartDrawer';
 
