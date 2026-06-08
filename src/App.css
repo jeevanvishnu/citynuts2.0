@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Poppins', sans-serif;
+
+  --color-primary: #FF6B9D;
+  --color-primary-dark: #e05284;
+  --color-accent: #FFB6C1;
+  --color-blush: #FFF0F5;
+  --color-dark: #2D2D2D;
+  --color-charcoal: #1E1E1E;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+
+  --shadow-premium: 0 8px 30px rgba(255, 182, 193, 0.2);
+  --shadow-premium-hover: 0 20px 40px rgba(255, 107, 157, 0.35);
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* Offset for sticky nav */
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-dark);
+    background-color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: white;
+  }
+}
+
+/* Custom premium styles */
+.text-gradient-pink {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-pink {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.bg-gradient-pink-soft {
+  background: linear-gradient(135deg, var(--color-blush) 0%, #ffffff 100%);
+}
+
+/* Custom horizontal scrollbar hide */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
