@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Leaf, Sparkle, GlobeHemisphereWest, Heartbeat, TreeEvergreen, HandHeart, ShieldCheck, Truck, Package } from '@phosphor-icons/react';
+import { Leaf, Sparkle, Heartbeat, TreeEvergreen, HandHeart, ShieldCheck, Truck, Package } from '@phosphor-icons/react';
 
 export const AboutPage: React.FC = () => {
   // Parallax setup for the hero image

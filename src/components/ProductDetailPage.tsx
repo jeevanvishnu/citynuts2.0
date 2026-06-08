@@ -27,7 +27,6 @@ import {
   CaretRight,
   CaretLeft,
   ShareNetwork,
-  GlobeHemisphereWest,
 } from '@phosphor-icons/react';
 import type { CartItem } from './CartDrawer';
 
