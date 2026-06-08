@@ -1,6 +1,10 @@
 import React from 'react';
 import { Star, Quotes, Sparkle } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 interface Testimonial {
   id: string;
@@ -14,27 +18,107 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 'test-1',
-    name: 'Clarissa Sterling',
-    location: 'Boston, MA',
-    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Clarissa',
+    name: 'Shahid Khan Pathan',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Shahid',
     rating: 5,
-    text: 'The freshness is absolutely unmatched! I bought the California almonds, and they are incredibly crunchy and sweet. You can tell they were sorted with great care. Even the elegant pink packaging is a gorgeous touch.',
+    text: 'Nice place to buy dry fruits and chocolates. Staff is friendly and supportive. They opened just recently and have good prices.',
   },
   {
     id: 'test-2',
-    name: 'Alastair Vance',
-    location: 'Austin, TX',
-    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Alastair',
+    name: 'Afsal Hussain',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Afsal',
     rating: 5,
-    text: "I've tried dry fruits from many luxury brands, but City Nuts' cashews are in a league of their own. So buttery, rich, and perfectly raw. Shipped vacuum-sealed, they tasted fresh off the harvest.",
+    text: 'Best choice for Premium Chocolate and Dry fruits',
   },
   {
     id: 'test-3',
-    name: 'Genevieve Moreau',
-    location: 'Seattle, WA',
-    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Genevieve',
+    name: 'Abdul Saleem',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Abdul',
     rating: 5,
-    text: 'The Medjool dates are like healthy caramel candies—extremely soft and juicy! And the roasted sea-salt pistachios are perfectly seasoned, not overly salty. This is my new go-to store for snacking.',
+    text: 'Best shoping experience in dry fruits and dubai chocolate 👍',
+  },
+  {
+    id: 'test-4',
+    name: 'Nihal Halu',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Nihal',
+    rating: 5,
+    text: 'Fresh, crunchy, and top-quality nuts! Wide variety, neat packaging, and great customer service. Best nut shop in town – highly recommend!',
+  },
+  {
+    id: 'test-5',
+    name: 'Sahad C P',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Sahad',
+    rating: 5,
+    text: 'highly recommended.. very nice shop... Absolutely fresh and crunchy! The best quality nuts I’ve had in a long time.',
+  },
+  {
+    id: 'test-6',
+    name: 'Muhammed Farzin',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Muhammed',
+    rating: 5,
+    text: 'One of the best shops in Dubai with a wide variety of nuts, chocolates, and dry fruits. Excellent quality and great collection — highly recommended for everyone.',
+  },
+  {
+    id: 'test-7',
+    name: 'Vân Nguyễn',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Van',
+    rating: 5,
+    text: 'I had a good experience shopping here. The staff is very nice, I forgot my bag when shopping here. When I returned to the hotel it was already midnight. and the distance to my hotel is quite far, about 13 km.',
+  },
+  {
+    id: 'test-8',
+    name: 'Muhammad Zamankpk',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Zamankpk',
+    rating: 5,
+    text: 'Good quality chocolates,nuts dry fruits for all type of customers.highly recommended',
+  },
+  {
+    id: 'test-9',
+    name: 'Sahad Palathayi',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=SahadP',
+    rating: 5,
+    text: 'Every type of dry fruits and chocolates are available good experience with this shop',
+  },
+  {
+    id: 'test-10',
+    name: 'Simón Altgelt',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Simon',
+    rating: 5,
+    text: 'Nihal great service gave to us. Very good place and attention',
+  },
+  {
+    id: 'test-11',
+    name: 'Jshi Jshi',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Jshi',
+    rating: 5,
+    text: 'Best quality and lot of verities of nuts and chocolate have and friendly staff',
+  },
+  {
+    id: 'test-12',
+    name: 'Ajmal Hussain P P',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Ajmal',
+    rating: 5,
+    text: 'Happy to shop. Lots of different chocolate...World of dry fruits...',
+  },
+  {
+    id: 'test-13',
+    name: 'Thammi Razi',
+    location: 'Verified Customer',
+    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Thammi',
+    rating: 5,
+    text: 'Great place for premium nuts and chocolates. Always fresh, always tasty!',
   },
 ];
 
@@ -74,18 +158,30 @@ export const Testimonials: React.FC = () => {
           />
         </div>
 
-        {/* Testimonial Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Testimonial Cards Slider */}
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={32}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          className="!pb-16"
+          style={{ '--swiper-pagination-color': '#e83e8c', '--swiper-pagination-bullet-inactive-color': '#999' } as React.CSSProperties}
+        >
           {testimonials.map((test, idx) => (
-            <motion.div
-              key={test.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: idx * 0.15, duration: 0.5 }}
-              whileHover={{ y: -10 }}
-              className="relative group bg-white rounded-3xl p-8 sm:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-primary/5 hover:border-primary/20 hover:shadow-premium transition-all duration-300"
-            >
+            <SwiperSlide key={test.id} className="h-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                whileHover={{ y: -10 }}
+                className="relative group bg-white rounded-3xl p-8 sm:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-primary/5 hover:border-primary/20 hover:shadow-premium transition-all duration-300 h-full flex flex-col"
+              >
               {/* Giant Background Quote */}
               <div className="absolute top-6 right-6 text-primary/5 group-hover:text-primary/10 transition-colors duration-300 pointer-events-none transform -rotate-6">
                 <Quotes size={100} weight="fill" />
@@ -129,8 +225,9 @@ export const Testimonials: React.FC = () => {
                 </div>
               </div>
             </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
