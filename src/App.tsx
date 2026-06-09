@@ -201,7 +201,11 @@ const App: React.FC = () => {
             <About />
 
             {/* 4. Product Cards Section */}
-            <Products onAddToCart={handleAddToCart} />
+            <Products 
+              onAddToCart={handleAddToCart} 
+              wishlist={wishlist} 
+              onToggleWishlist={handleWishlistToggle} 
+            />
 
             {/* 5. Customer Feedback / Testimonials */}
             <Testimonials />
