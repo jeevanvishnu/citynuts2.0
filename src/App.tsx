@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./App.css"
 import { Navbar } from './components/Navbar';
-import { HeroSlider } from './components/HeroSlider';
+import { VideoHero } from './components/VideoHero';
 import { About } from './components/About';
 import { Products } from './components/Products';
 import { Testimonials } from './components/Testimonials';
@@ -191,8 +191,8 @@ const App: React.FC = () => {
       <main className="flex-1">
         {currentPage === 'home' && (
           <>
-            {/* 2. Hero Swiper/Slider Banner */}
-            <HeroSlider />
+            {/* 1. Video Hero Section */}
+            <VideoHero />
 
             {/* 2b. Home Features & Marquee */}
             <HomeFeatures />
@@ -201,10 +201,10 @@ const App: React.FC = () => {
             <About />
 
             {/* 4. Product Cards Section */}
-            <Products 
-              onAddToCart={handleAddToCart} 
-              wishlist={wishlist} 
-              onToggleWishlist={handleWishlistToggle} 
+            <Products
+              onAddToCart={handleAddToCart}
+              wishlist={wishlist}
+              onToggleWishlist={handleWishlistToggle}
             />
 
             {/* 5. Customer Feedback / Testimonials */}

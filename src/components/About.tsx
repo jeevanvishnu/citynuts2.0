@@ -80,6 +80,7 @@ export const About: React.FC = () => {
               <motion.button
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() => { window.location.hash = '#about'; }}
                 className="px-8 py-3.5 bg-gradient-pink text-white rounded-full font-semibold shadow-premium hover:shadow-premium-hover transition-all duration-300"
               >
                 Read Our Full Story
