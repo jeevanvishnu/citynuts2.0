@@ -835,7 +835,7 @@ export const ProductListingPage: React.FC<ProductListingPageProps> = ({ onAddToC
               </div>
 
               {/* Apply Filters Floating Button */}
-              <div className="sticky bottom-0 left-0 w-full pt-4 bg-white border-t border-primary/5 flex gap-4">
+              <div className="w-full pt-4 bg-white border-t border-primary/5 flex gap-4 mt-2">
                 <button
                   onClick={() => {
                     handleClearFilters();

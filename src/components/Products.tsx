@@ -5,6 +5,7 @@ import type { CartItem } from './CartDrawer';
 import { productsData } from '../data/products';
 import type { ProductData } from '../data/products';
 import { PromoBanner } from './PromoBanner';
+import { InformationBanner } from './InformationBanner';
 
 interface ProductCardProps {
   product: ProductData;
@@ -224,8 +225,10 @@ export const Products: React.FC<ProductsProps> = ({ onAddToCart, wishlist, onTog
         />
 
         {/* 2. Dates Section (8 cards) */}
-        <CategorySection
-          title="Exotic Dates"
+        <div className="space-y-12">
+          <InformationBanner />
+          <CategorySection
+            title="Exotic Dates"
           description="Sweet, soft, and premium dates sourced globally, perfect for natural energy and luxury gifting."
           categoryName="Dates"
           products={productsData}
@@ -233,6 +236,7 @@ export const Products: React.FC<ProductsProps> = ({ onAddToCart, wishlist, onTog
           wishlist={wishlist}
           onToggleWishlist={onToggleWishlist}
         />
+        </div>
 
         {/* 3. Mid-page Promotional Banner */}
         <PromoBanner />

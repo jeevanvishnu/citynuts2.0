@@ -396,11 +396,11 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, wishlistCount, onCart
                       <button
                         onClick={() => {
                           setIsUserMenuOpen(false);
-                          window.location.hash = '#home';
+                          window.location.hash = '#account';
                         }}
                         className="w-full text-left px-4 py-2 text-xs text-dark hover:bg-primary/5 hover:text-primary transition-colors font-medium cursor-pointer"
                       >
-                        My Member Profile
+                        My Profile
                       </button>
                       <button
                         onClick={() => {

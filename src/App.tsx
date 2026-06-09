@@ -17,6 +17,8 @@ import { CartPage } from './components/CartPage';
 import { WishlistPage } from './components/WishlistPage';
 import { CheckoutPage } from './components/CheckoutPage';
 import { LoginPage } from './components/LoginPage';
+import { AccountPage } from './components/AccountPage';
+import { OrderDetailsPage } from './components/OrderDetailsPage';
 import { MagnifyingGlass, X, Check } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -32,7 +34,7 @@ const App: React.FC = () => {
     return saved ? JSON.parse(saved) : null;
   });
 
-  const [currentPage, setCurrentPage] = useState<'home' | 'products' | 'about' | 'contact' | 'product-detail' | 'cart' | 'wishlist' | 'checkout' | 'login'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'products' | 'about' | 'contact' | 'product-detail' | 'cart' | 'wishlist' | 'checkout' | 'login' | 'account' | 'order-details'>(() => {
     if (window.location.hash.startsWith('#products')) return 'products';
     if (window.location.hash === '#about') return 'about';
     if (window.location.hash === '#contact') return 'contact';
@@ -41,6 +43,8 @@ const App: React.FC = () => {
     if (window.location.hash === '#wishlist') return 'wishlist';
     if (window.location.hash === '#checkout') return 'checkout';
     if (window.location.hash === '#login') return 'login';
+    if (window.location.hash === '#account') return 'account';
+    if (window.location.hash === '#order-details') return 'order-details';
     return 'home';
   });
 
@@ -69,6 +73,12 @@ const App: React.FC = () => {
         window.scrollTo(0, 0);
       } else if (window.location.hash === '#login') {
         setCurrentPage('login');
+        window.scrollTo(0, 0);
+      } else if (window.location.hash === '#account') {
+        setCurrentPage('account');
+        window.scrollTo(0, 0);
+      } else if (window.location.hash === '#order-details') {
+        setCurrentPage('order-details');
         window.scrollTo(0, 0);
       } else {
         setCurrentPage('home');
@@ -272,6 +282,27 @@ const App: React.FC = () => {
               window.location.hash = '#home';
             }}
           />
+        )}
+
+        {currentPage === 'account' && (
+          <AccountPage
+            user={user}
+            onLogout={() => {
+              setUser(null);
+              localStorage.removeItem('citynuts_user');
+              setToastMessage('Successfully logged out.');
+              setShowToast(true);
+              setTimeout(() => setShowToast(false), 2500);
+              window.location.hash = '#home';
+            }}
+            onNavigate={(hash) => {
+              window.location.hash = hash;
+            }}
+          />
+        )}
+
+        {currentPage === 'order-details' && (
+          <OrderDetailsPage />
         )}
       </main>
 
