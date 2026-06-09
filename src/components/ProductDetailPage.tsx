@@ -29,6 +29,7 @@ import {
   ShareNetwork,
 } from '@phosphor-icons/react';
 import type { CartItem } from './CartDrawer';
+import { InformationBanner } from './InformationBanner';
 
 interface ProductDetailPageProps {
   onAddToCart: (item: CartItem) => void;
@@ -738,29 +739,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ onAddToCar
       <ProductSwiperSection title="Recently Viewed" background="bg-white" />
 
       {/* 6. Trust & Guarantee Banner */}
-      <div className="w-full bg-[#FFF0F5] py-12 border-y border-[#FFB6C1]/30 mt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-[#FFB6C1]/50">
-            {[
-              { icon: Trophy, title: 'Premium Quality Guaranteed', desc: 'Sourced from the best farms globally.' },
-              { icon: ArrowCounterClockwise, title: 'Easy 7-Day Returns', desc: 'Not satisfied? Get a full refund.' },
-              { icon: Truck, title: 'Free Delivery', desc: 'On all orders above 100.' },
-              { icon: Lock, title: '100% Secure Payments', desc: 'Encrypted & safe checkout.' },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -5 }}
-                className="flex flex-col items-center text-center px-4 pt-6 md:pt-0 group cursor-default"
-              >
-                <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center text-[#FF6B9D] mb-4 group-hover:shadow-[0_0_20px_rgba(255,107,157,0.3)] transition-all">
-                  <item.icon size={32} weight="light" />
-                </div>
-                <h4 className="font-bold text-[#2D2D2D] mb-1">{item.title}</h4>
-                <p className="text-xs text-gray-500">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <div className="mt-8">
+        <InformationBanner />
       </div>
 
     </div>

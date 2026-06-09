@@ -517,7 +517,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                       }}
                       className="font-bold text-primary hover:text-primary-dark transition-colors cursor-pointer"
                     >
-                      Create boutique account
+                      Create an account
                     </button>
                   </p>
                 </motion.div>

@@ -131,13 +131,25 @@ export const AboutPage: React.FC = () => {
           {/* Nuts - Tall */}
           <motion.div 
             whileHover={{ y: -4 }}
-            className="md:row-span-2 bg-gradient-pink rounded-[2rem] p-8 shadow-premium-hover border border-primary/20 flex flex-col justify-between relative overflow-hidden group text-white"
+            className="md:row-span-2 bg-blush rounded-[2rem] shadow-premium border border-primary/20 flex flex-col relative overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-            <Package size={48} weight="duotone" className="mb-4" />
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-2">Nuts</h3>
-              <p className="text-sm text-white/90 leading-relaxed">
+            {/* Top decorative area with icon */}
+            <div className="relative z-10 p-8 pb-0">
+              <Package size={48} weight="duotone" className="mb-4 text-primary" />
+            </div>
+
+            {/* Central Product Image */}
+            <div className="relative z-10 flex-grow flex items-center justify-center p-4">
+              <img 
+                src="/explore/premium-nuts-2048x2048.webp" 
+                alt="Premium Nuts" 
+                className="w-[90%] max-w-[280px] object-contain group-hover:scale-105 transition-transform duration-700 mix-blend-multiply pointer-events-none drop-shadow-md" 
+              />
+            </div>
+
+            <div className="relative z-10 p-8 pt-0">
+              <h3 className="text-2xl font-bold mb-2 text-dark group-hover:text-primary transition-colors">Nuts</h3>
+              <p className="text-sm text-dark/70 leading-relaxed drop-shadow-sm">
                 We journey to the finest orchards around the world to source our nuts. From the satisfying crunch of almonds to exotic macadamias, they’re a symphony of textures and flavors.
               </p>
             </div>
