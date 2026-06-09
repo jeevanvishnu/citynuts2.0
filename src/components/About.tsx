@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, ShieldCheck, Truck, Sparkle } from '@phosphor-icons/react';
+import { Leaf, ShieldCheck, Truck, Sparkle, ArrowRight } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 
 export const About: React.FC = () => {
@@ -19,6 +19,27 @@ export const About: React.FC = () => {
       title: 'Fast Delivery',
       desc: 'Vacuum-sealed packaging shipped in climate-controlled transport to preserve absolute freshness.',
     },
+  ];
+
+  const exploreCards = [
+    {
+      subtitle: 'Exclusive',
+      title: 'Premium Nuts Selection',
+      image: '/explore/premium-nuts-2048x2048.webp',
+      link: '#products'
+    },
+    {
+      subtitle: 'Handcrafted',
+      title: 'Thoughtful Gift Boxes',
+      image: '/explore/premium-gifts-2048x2048.webp',
+      link: '#products'
+    },
+    {
+      subtitle: 'Finest',
+      title: 'Premium Dates Collections',
+      image: '/explore/premium-dates-2048x2048.webp',
+      link: '#products'
+    }
   ];
 
   return (
@@ -117,6 +138,48 @@ export const About: React.FC = () => {
             </div>
           </motion.div>
 
+        </div>
+
+        {/* Bottom Explore Cards */}
+        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {exploreCards.map((card, idx) => (
+            <motion.a
+              key={card.title}
+              href={card.link}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="group flex flex-col items-center p-8 sm:p-10 rounded-[2rem] bg-[#FDFCFB] border border-gray-100 shadow-sm hover:shadow-premium hover:border-primary/20 transition-all duration-500 cursor-pointer relative overflow-hidden text-center block w-full"
+            >
+              {/* Subtle accent glow behind the image */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-700 pointer-events-none" />
+
+              {/* Image Container */}
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 mb-8 flex items-center justify-center">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-contain drop-shadow-xl group-hover:scale-110 group-hover:-translate-y-3 transition-transform duration-500 ease-out"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 w-full flex flex-col items-center">
+                <span className="text-primary font-bold tracking-widest text-xs uppercase mb-2">
+                  {card.subtitle}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-charcoal group-hover:text-primary transition-colors duration-300">
+                  {card.title}
+                </h3>
+                
+                <div className="mt-5 flex items-center justify-center gap-2 text-sm font-bold text-gray-400 group-hover:text-primary transition-colors duration-300">
+                  <span>Explore</span>
+                  <ArrowRight size={16} weight="bold" className="group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </div>
+            </motion.a>
+          ))}
         </div>
       </div>
 
