@@ -1,74 +1,87 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Leaf, Gift, ShieldCheck, Truck } from '@phosphor-icons/react';
+import { ArrowRight } from '@phosphor-icons/react';
 
-const features = [
+const categories = [
   {
-    icon: <Leaf weight="duotone" className="text-primary w-8 h-8" />,
-    title: 'Natural Goodness',
-    description: 'Nuts and seeds are good sources of protein, healthy fats, and fibres.',
+    title: 'Dates',
+    image: '/home/category02.webp',
+    link: '#products?category=Nuts',
   },
   {
-    icon: <ShieldCheck weight="duotone" className="text-primary w-8 h-8" />,
-    title: 'Premium Quality',
-    description: 'Indulge in the finest selection of premium dates, dry fruits, and nuts.',
+    title: 'Nuts',
+    image: '/home/category01.webp',
+    link: '#products?category=Dates',
   },
   {
-    icon: <Gift weight="duotone" className="text-primary w-8 h-8" />,
-    title: 'Perfect for Gifting',
-    description: 'Our high-quality products make the perfect gift for any special occasion.',
+    title: 'Dry fruits',
+    image: '/home/category03.webp',
+    link: '#products?category=Nuts',
   },
   {
-    icon: <Truck weight="duotone" className="text-primary w-8 h-8" />,
-    title: 'Fast Delivery',
-    description: 'Freshness delivered right to your doorstep, quickly and safely.',
+    title: 'Chocolate',
+    image: '/home/category04.webp',
+    link: '#products?category=Nuts',
   },
 ];
 
 export const HomeFeatures: React.FC = () => {
   return (
-    <section className="bg-white pt-8 pb-16 relative z-20 border-b border-primary/10">
+    <section className="bg-white pt-16 pb-20 relative z-20 border-b border-primary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Marquee Banner */}
-        <div className="mb-16 overflow-hidden flex bg-blush/30 py-3 rounded-full border border-primary/10 relative">
-            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 rounded-l-full"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 rounded-r-full"></div>
-            <motion.div 
-              animate={{ x: [0, -1035] }} 
-              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-              className="flex whitespace-nowrap gap-12 text-dark/70 font-medium tracking-wide text-sm items-center"
-            >
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="flex gap-12">
-                   <span>✨ Nuts and seeds are good sources of protein, healthy fats, fibres, vitamins and minerals.</span>
-                   <span>✨ Regulate body weight with healthy, natural fats.</span>
-                   <span>✨ Shop now for a healthy, delicious treat!</span>
-                </div>
-              ))}
-            </motion.div>
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl font-extrabold text-charcoal tracking-tight"
+          >
+            Shop by Category
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-500 text-base mt-4 max-w-2xl mx-auto"
+          >
+            Discover our premium selection of dry fruits and nuts. Each piece is carefully selected for the highest quality and taste.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {features.map((feature, idx) => (
-            <motion.div
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {categories.map((category, idx) => (
+            <motion.a
+              href={category.link}
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="flex flex-col items-center text-center group cursor-default"
+              className="group flex flex-col items-center p-8 rounded-[2rem] bg-[#FDFCFB] border border-gray-100 shadow-sm hover:shadow-premium hover:border-primary/20 transition-all duration-500 cursor-pointer relative overflow-hidden"
             >
-              <div className="w-16 h-16 rounded-full bg-blush flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300 shadow-sm">
-                {feature.icon}
+              {/* Subtle accent glow behind the image */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-700"></div>
+
+              <div className="relative w-48 h-48 mb-8 flex items-center justify-center">
+                <img 
+                  src={category.image} 
+                  alt={category.title}
+                  className="w-full h-full object-contain drop-shadow-xl group-hover:scale-110 group-hover:-translate-y-3 transition-transform duration-500 ease-out"
+                />
               </div>
-              <h3 className="text-lg font-bold text-dark mb-3 group-hover:text-primary transition-colors">
-                {feature.title}
-              </h3>
-              <p className="text-dark/60 text-sm leading-relaxed font-light px-2">
-                {feature.description}
-              </p>
-            </motion.div>
+              
+              <div className="text-center z-10 w-full">
+                <h3 className="text-xl font-bold text-charcoal group-hover:text-primary transition-colors duration-300">
+                  {category.title}
+                </h3>
+                <div className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-gray-400 group-hover:text-primary transition-colors duration-300">
+                  <span>Explore Collection</span>
+                  <ArrowRight size={16} weight="bold" className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                </div>
+              </div>
+            </motion.a>
           ))}
         </div>
       </div>
