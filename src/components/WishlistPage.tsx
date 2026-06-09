@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Heart, Trash, ArrowRight, ArrowUUpLeft, Star } from '@phosphor-icons/react';
-import { productsData } from './ProductListingPage';
+import { productsData } from '../data/products';
 import type { CartItem } from './CartDrawer';
 
 interface WishlistPageProps {

@@ -27,7 +27,7 @@ const features = [
 
 export const HomeFeatures: React.FC = () => {
   return (
-    <section className="bg-white py-16 relative z-20 border-b border-primary/10 -mt-8 rounded-t-[3rem] shadow-[0_-20px_40px_rgba(0,0,0,0.02)]">
+    <section className="bg-white pt-8 pb-16 relative z-20 border-b border-primary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Marquee Banner */}

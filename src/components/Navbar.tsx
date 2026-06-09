@@ -23,7 +23,26 @@ const categoriesList = [
   { name: 'Gifts', path: '#products?category=Gifts' }
 ];
 
-const megaMenuData: Record<string, any> = {
+interface MegaMenuData {
+  title: string;
+  subs: string[];
+  featured: {
+    name: string;
+    weight: string;
+    rating: string;
+    reviews: string;
+    price: string;
+    oldPrice: string;
+    img: string;
+  };
+  promo: {
+    title1: string;
+    title2: string;
+    subtitle: string;
+  };
+}
+
+const megaMenuData: Record<string, MegaMenuData> = {
   'Dates': {
     title: 'Explore Dates',
     subs: ['Medjool Dates', 'Ajwa Dates', 'Safawi Dates', 'Kimia Dates', 'Pitted Dates', 'Date Rolls', 'Stuffed Dates', 'Date Syrup'],

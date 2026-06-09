@@ -1,231 +1,124 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { CaretLeft, CaretRight, Sparkle } from '@phosphor-icons/react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 
-interface Slide {
-  badge: string;
-  headline: string;
-  subtext: string;
-  buttonText: string;
-  image: string;
-  targetId: string;
-}
-
-const slides: Slide[] = [
-  {
-    badge: '100% Organic & Handpicked',
-    headline: 'Crunchy Premium California Almonds',
-    subtext: 'Nourish your body with gourmet California almonds. Loaded with nutrients, vitamin E, and healthy fats, selected for maximum crunch.',
-    buttonText: 'Shop Almonds Now',
-    image: '/images/hero_almonds.png',
-    targetId: '#products',
-  },
-  {
-    badge: 'Premium Selection',
-    headline: 'Creamy Buttery Royal Cashews',
-    subtext: 'Indulge in extra-large, creamy organic cashews. Harvested sustainably and packed with minerals, ideal for premium daily snacking.',
-    buttonText: 'Explore Cashews',
-    image: '/images/hero_cashews.png',
-    targetId: '#products',
-  },
-  {
-    badge: 'Lightly Roasted & Salted',
-    headline: 'Gourmet Handpicked Salted Pistachios',
-    subtext: 'Crack open the freshness! Perfectly dry-roasted green pistachios with a touch of sea salt, containing rich fiber and antioxidants.',
-    buttonText: 'Shop Pistachios',
-    image: '/images/hero_pistachios.png',
-    targetId: '#products',
-  },
+const bannerImages = [
+  '/banner/banner01.png',
+  '/banner/banner02.png',
+  '/banner/banner03.png',
 ];
 
 export const HeroSlider: React.FC = () => {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [direction, setDirection] = useState(1);
 
-  const nextSlide = useCallback(() => {
-    setDirection(1);
-    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setDirection(-1);
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  }, []);
-
-  // Autoplay
   useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrent((prev) => (prev + 1) % bannerImages.length);
+    }, 5000);
     return () => clearInterval(timer);
-  }, [nextSlide]);
+  }, []);
 
-  // Framer Motion slide transitions
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % bannerImages.length);
+  };
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrent((prev) => (prev === 0 ? bannerImages.length - 1 : prev - 1));
+  };
+
   const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? '100%' : '-100%',
+    enter: (direction: number) => ({
+      x: direction > 0 ? '10%' : '-10%',
       opacity: 0,
+      scale: 0.98,
     }),
     center: {
       x: 0,
       opacity: 1,
+      scale: 1,
       transition: {
-        x: { type: 'spring' as const, stiffness: 200, damping: 26 },
-        opacity: { duration: 0.4 },
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
-    exit: (dir: number) => ({
-      x: dir < 0 ? '100%' : '-100%',
+    exit: (direction: number) => ({
+      x: direction < 0 ? '10%' : '-10%',
       opacity: 0,
+      scale: 0.98,
       transition: {
-        x: { type: 'spring' as const, stiffness: 200, damping: 26 },
-        opacity: { duration: 0.3 },
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1],
       },
     }),
   };
 
   return (
-    <section id="home" className="relative w-full min-h-[90dvh] pt-[80px] bg-gradient-pink-soft overflow-hidden flex items-center">
-      {/* Dynamic Background Blob Accents */}
-      <div className="absolute top-1/4 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float pointer-events-none" />
+    <section id="home" className="w-full bg-white relative group mt-[76px] lg:mt-[88px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        {/* Container sizing dynamically based on image aspect ratio to prevent cropping */}
+        <div className="relative w-full bg-gray-50 flex items-center justify-center overflow-hidden shadow-sm rounded-2xl md:rounded-3xl">
 
-      {/* Main Slide Wrapper */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full relative z-10">
-        <div className="relative h-[650px] md:h-[500px] flex items-center">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
-              key={current}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full absolute"
+        {/* Invisible spacer image to set the container's height to match the banner's natural aspect ratio */}
+        <img
+          src={bannerImages[0]}
+          alt="spacer"
+          className="w-full h-auto invisible"
+          aria-hidden="true"
+        />
+
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={current}
+            src={bannerImages[current]}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            className="absolute top-0 left-0 w-full h-full object-cover object-center"
+            alt={`City Nuts Banner ${current + 1}`}
+          />
+        </AnimatePresence>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 sm:left-6 z-20 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/70 hover:bg-white text-primary shadow-lg backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+          aria-label="Previous Slide"
+        >
+          <CaretLeft size={24} weight="bold" className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 sm:right-6 z-20 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/70 hover:bg-white text-primary shadow-lg backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+          aria-label="Next Slide"
+        >
+          <CaretRight size={24} weight="bold" className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        {/* Dot Indicators */}
+        <div className="absolute bottom-4 sm:bottom-6 left-0 w-full flex justify-center gap-2 z-20">
+          {bannerImages.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                setDirection(idx > current ? 1 : -1);
+                setCurrent(idx);
+              }}
+              className="focus:outline-none py-2"
+              aria-label={`Go to slide ${idx + 1}`}
             >
-              {/* Left Column: Copy Content */}
-              <div className="space-y-6 text-left max-w-xl">
-                <motion.span
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-xs tracking-wider uppercase border border-primary/20"
-                >
-                  <Sparkle size={14} weight="fill" />
-                  {slides[current].badge}
-                </motion.span>
-
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-dark leading-[1.1]"
-                >
-                  {slides[current].headline.split(' ').map((word, idx) => {
-                    const isHighlight = idx >= slides[current].headline.split(' ').length - 2;
-                    return (
-                      <span key={idx} className={isHighlight ? 'text-primary block sm:inline' : ''}>
-                        {word}{' '}
-                      </span>
-                    );
-                  })}
-                </motion.h1>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-base sm:text-lg text-dark/70 leading-relaxed font-light"
-                >
-                  {slides[current].subtext}
-                </motion.p>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                  className="pt-2"
-                >
-                  <motion.a
-                    href={slides[current].targetId}
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center px-8 py-4 bg-gradient-pink text-white rounded-full font-semibold shadow-premium hover:shadow-premium-hover transition-all duration-300 gap-2 border border-transparent hover:border-primary/20"
-                  >
-                    {slides[current].buttonText}
-                  </motion.a>
-                </motion.div>
-              </div>
-
-              {/* Right Column: High Quality Product Image */}
-              <div className="flex justify-center md:justify-end items-center relative">
-                {/* Visual decorative ring background */}
-                <div className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-full border border-dashed border-primary/20 animate-spin-slow pointer-events-none" />
-                <div className="absolute w-[260px] h-[260px] sm:w-[340px] sm:h-[340px] rounded-full bg-gradient-to-tr from-primary/5 to-accent/10 pointer-events-none" />
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 80,
-                    damping: 15,
-                    delay: 0.3,
-                  }}
-                  className="relative z-10 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] flex items-center justify-center animate-float"
-                >
-                  <img
-                    src={slides[current].image}
-                    alt={slides[current].headline}
-                    className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(255,107,157,0.25)] select-none"
-                    draggable="false"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+              <div
+                className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${idx === current ? 'w-8 bg-primary shadow-md' : 'w-2 sm:w-2.5 bg-white/80 hover:bg-white shadow-sm'
+                  }`}
+              />
+            </button>
+          ))}
         </div>
-      </div>
-
-      {/* Custom Pink Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white border border-primary/20 flex items-center justify-center text-primary shadow-md hover:bg-primary hover:text-white transition-all duration-300 active:scale-90"
-        aria-label="Previous Slide"
-      >
-        <CaretLeft size={22} weight="bold" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white border border-primary/20 flex items-center justify-center text-primary shadow-md hover:bg-primary hover:text-white transition-all duration-300 active:scale-90"
-        aria-label="Next Slide"
-      >
-        <CaretRight size={22} weight="bold" />
-      </button>
-
-      {/* Dot Indicators */}
-      <div className="absolute bottom-8 left-0 w-full flex justify-center gap-3 z-20">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => {
-              setDirection(idx > current ? 1 : -1);
-              setCurrent(idx);
-            }}
-            className="group focus:outline-none"
-            aria-label={`Go to slide ${idx + 1}`}
-          >
-            <div className="relative h-3 rounded-full transition-all duration-300">
-              {idx === current ? (
-                <motion.div
-                  layoutId="activeDot"
-                  className="w-8 h-3 bg-gradient-pink rounded-full"
-                  transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                />
-              ) : (
-                <div className="w-3 h-3 bg-primary/30 group-hover:bg-primary/60 rounded-full transition-colors duration-300" />
-              )}
-            </div>
-          </button>
-        ))}
+        </div>
       </div>
     </section>
   );
