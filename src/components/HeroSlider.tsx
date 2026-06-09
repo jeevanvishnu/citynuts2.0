@@ -41,7 +41,7 @@ export const HeroSlider: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: "easeInOut",
       },
     },
     exit: (direction: number) => ({
@@ -50,7 +50,7 @@ export const HeroSlider: React.FC = () => {
       scale: 0.98,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: "easeInOut",
       },
     }),
   };
