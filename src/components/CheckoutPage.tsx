@@ -82,7 +82,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
     } else {
       value = value.substring(0, 19);
     }
-    
+
     // Custom length cap for spaces (16 digits + 3 spaces = 19 characters)
     setFormData((prev) => ({ ...prev, cardNumber: value.slice(0, 19) }));
     if (errors.cardNumber) {
@@ -114,7 +114,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
   const validateShipping = () => {
     const newErrors: Record<string, string> = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (!formData.email || !emailRegex.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
@@ -179,13 +179,13 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
     }
 
     setIsProcessing(true);
-    
+
     // Simulate secure transaction delay
     setTimeout(() => {
       setIsProcessing(false);
       const generatedOrderNum = `CN-${Math.floor(100000 + Math.random() * 900000)}-AE`;
       setCompletedOrderNum(generatedOrderNum);
-      
+
       // Save details for success screen
       setSavedOrderDetails({
         items: [...cartItems],
@@ -198,7 +198,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
         fullName: formData.fullName,
         email: formData.email
       });
-      
+
       setStep('success');
       onOrderSuccess();
       window.scrollTo(0, 0);
@@ -216,7 +216,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
         setIsProcessing(false);
         const generatedOrderNum = `CN-${Math.floor(100000 + Math.random() * 900000)}-AE`;
         setCompletedOrderNum(generatedOrderNum);
-        
+
         setSavedOrderDetails({
           items: [...cartItems],
           subtotal,
@@ -228,7 +228,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
           fullName: formData.fullName,
           email: formData.email
         });
-        
+
         setStep('success');
         onOrderSuccess();
         window.scrollTo(0, 0);
@@ -305,7 +305,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
               >
                 Thank you for choosing City Nuts. Your premium selection is being vacuum-packed for freshness.
               </motion.p>
-              
+
               <div className="mt-6 inline-flex bg-white/75 border border-primary/10 px-4 py-2 rounded-full text-xs font-semibold text-primary">
                 Order Tracking: {completedOrderNum}
               </div>
@@ -326,7 +326,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                     {savedOrderDetails.shippingCity}, {savedOrderDetails.shippingEmirate}
                   </p>
                 </div>
-                
+
                 <div className="space-y-1">
                   <div className="text-xs font-bold text-dark/40 uppercase tracking-wider flex items-center gap-1.5">
                     <Calendar size={14} className="text-primary" weight="bold" />
@@ -347,7 +347,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                   <Receipt size={16} className="text-primary" weight="bold" />
                   Your Selections
                 </h3>
-                
+
                 <div className="divide-y divide-slate-100 border-t border-b border-slate-100/50 py-2">
                   {savedOrderDetails.items.map((item) => (
                     <div key={item.id} className="flex justify-between items-center py-3.5 text-sm">
@@ -361,7 +361,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                         </div>
                       </div>
                       <span className="font-bold text-dark font-mono text-sm">
-                        AED {(item.price * item.quantity).toFixed(2)}
+                        د.إ{(item.price * item.quantity).toFixed(2)}
                       </span>
                     </div>
                   ))}
@@ -372,11 +372,11 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
               <div className="space-y-3 pt-2 max-w-sm ml-auto">
                 <div className="flex justify-between items-center text-xs font-medium text-dark/50">
                   <span>Subtotal</span>
-                  <span className="font-mono text-dark font-semibold">AED {savedOrderDetails.subtotal.toFixed(2)}</span>
+                  <span className="font-mono text-dark font-semibold">د.إ{savedOrderDetails.subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between items-center text-xs font-medium text-dark/50">
                   <span>VAT (5%)</span>
-                  <span className="font-mono text-dark font-semibold">AED {savedOrderDetails.vat.toFixed(2)}</span>
+                  <span className="font-mono text-dark font-semibold">د.إ{savedOrderDetails.vat.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between items-center text-xs font-medium text-dark/50">
                   <span>Shipping</span>
@@ -385,7 +385,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                 <div className="h-px bg-slate-100 w-full my-2"></div>
                 <div className="flex justify-between items-end">
                   <span className="text-sm font-bold text-dark font-poppins">Total Paid</span>
-                  <span className="text-xl font-black text-primary font-poppins">AED {savedOrderDetails.total.toFixed(2)}</span>
+                  <span className="text-xl font-black text-primary font-poppins">د.إ{savedOrderDetails.total.toFixed(2)}</span>
                 </div>
               </div>
 
@@ -398,7 +398,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                   <Printer size={18} weight="bold" />
                   Print Receipt
                 </button>
-                
+
                 <a
                   href="#home"
                   className="w-full sm:flex-1 text-center py-3 bg-gradient-pink hover:opacity-90 text-white rounded-xl text-sm font-bold shadow-premium transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] flex items-center justify-center gap-2"
@@ -421,7 +421,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header Navigation link */}
         <div className="mb-8 flex items-center justify-between">
           <a
@@ -431,7 +431,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" weight="bold" />
             Back to Cart
           </a>
-          
+
           {/* Step Indicators */}
           <div className="flex items-center gap-2.5">
             <div className={`flex items-center gap-1.5 text-xs font-bold ${step === 'shipping' ? 'text-primary' : 'text-dark/40'}`}>
@@ -461,11 +461,11 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            
+
             {/* Left Column: Form details (60% width on large screens) */}
             <div className="lg:col-span-7">
               <AnimatePresence mode="wait">
-                
+
                 {/* STEP 1: Shipping Details */}
                 {step === 'shipping' && (
                   <motion.div
@@ -637,7 +637,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                         <h2 className="text-2xl font-black font-poppins tracking-tight text-dark">Secure Payment</h2>
                         <p className="text-xs text-dark/40 mt-1 font-semibold uppercase tracking-wider">Select your preferred payment gateway</p>
                       </div>
-                      
+
                       <button
                         onClick={() => {
                           setStep('shipping');
@@ -838,7 +838,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                               ) : (
                                 <>
                                   <LockKey size={18} weight="bold" />
-                                  <span>Pay AED {total.toFixed(2)} Secured</span>
+                                  <span>Pay د.إ{total.toFixed(2)} Secured</span>
                                 </>
                               )}
                             </motion.button>
@@ -851,7 +851,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                           <div className="w-16 h-16 bg-[#F4F4F5] rounded-full flex items-center justify-center mx-auto text-dark">
                             <Fingerprint size={32} />
                           </div>
-                          
+
                           <div className="space-y-2 max-w-md mx-auto">
                             <h3 className="font-bold text-lg font-poppins">Authorize with Apple Pay</h3>
                             <p className="text-xs text-dark/50 leading-relaxed font-light">
@@ -877,7 +877,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                           <div className="w-16 h-16 bg-[#FFF8F0] rounded-full flex items-center justify-center mx-auto text-[#FF9800]">
                             <Truck size={32} weight="duotone" />
                           </div>
-                          
+
                           <div className="space-y-2 max-w-md mx-auto">
                             <h3 className="font-bold text-lg font-poppins">Cash on Delivery</h3>
                             <p className="text-xs text-dark/50 leading-relaxed font-light">
@@ -934,7 +934,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                           <p className="text-xs text-dark/40 font-semibold">{item.weight} &times; {item.quantity}</p>
                         </div>
                       </div>
-                      <span className="font-bold text-dark font-poppins">AED {(item.price * item.quantity).toFixed(2)}</span>
+                      <span className="font-bold text-dark font-poppins">د.إ{(item.price * item.quantity).toFixed(2)}</span>
                     </div>
                   ))}
                 </div>
@@ -945,12 +945,12 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                 <div className="space-y-3.5">
                   <div className="flex justify-between items-center text-xs font-semibold text-dark/60">
                     <span>Subtotal</span>
-                    <span className="text-dark font-bold">AED {subtotal.toFixed(2)}</span>
+                    <span className="text-dark font-bold">د.إ{subtotal.toFixed(2)}</span>
                   </div>
-                  
+
                   <div className="flex justify-between items-center text-xs font-semibold text-dark/60">
                     <span>VAT (5%)</span>
-                    <span className="text-dark font-bold">AED {vat.toFixed(2)}</span>
+                    <span className="text-dark font-bold">د.إ{vat.toFixed(2)}</span>
                   </div>
 
                   <div className="flex justify-between items-center text-xs font-semibold text-dark/60">
@@ -964,7 +964,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                 <div className="flex justify-between items-end">
                   <span className="text-sm font-bold text-dark font-poppins">Total</span>
                   <div className="text-right">
-                    <div className="text-2xl font-black text-primary font-poppins leading-none">AED {total.toFixed(2)}</div>
+                    <div className="text-2xl font-black text-primary font-poppins leading-none">د.إ{total.toFixed(2)}</div>
                     <div className="text-[9px] text-dark/40 font-semibold mt-1 font-sans">VAT Included</div>
                   </div>
                 </div>
@@ -1016,7 +1016,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
               <div className="space-y-2">
                 <h3 className="text-lg font-bold font-poppins tracking-tight">Apple Pay Auth</h3>
                 <p className="text-xs text-white/50 leading-relaxed font-light">
-                  Hold your finger on the sensor or use Face ID to confirm purchase of <span className="text-white font-bold">AED {total.toFixed(2)}</span>.
+                  Hold your finger on the sensor or use Face ID to confirm purchase of <span className="text-white font-bold">د.إ{total.toFixed(2)}</span>.
                 </p>
               </div>
 

@@ -141,7 +141,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-white/40">
-          <p>Copyright &copy; {currentYear} Skill Technologies All Rights Reserved.</p>
+          <p>Copyright &copy; {currentYear} citynuts All Rights Reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors">Terms & Condition</a>

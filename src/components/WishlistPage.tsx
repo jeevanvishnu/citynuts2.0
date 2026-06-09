@@ -135,7 +135,7 @@ export const WishlistPage: React.FC<WishlistPageProps> = ({ wishlist, onToggleWi
                         <a href="#product-detail" className="font-bold text-dark text-lg sm:text-xl leading-snug hover:text-primary transition-colors duration-200">
                           {product.name}
                         </a>
-                        
+
                         <div className="flex items-center gap-2">
                           <span className="inline-block text-xs font-bold text-dark/60 bg-dark/5 border border-dark/5 rounded-md px-2.5 py-1">
                             {product.weight}
@@ -149,8 +149,8 @@ export const WishlistPage: React.FC<WishlistPageProps> = ({ wishlist, onToggleWi
                       {/* Pricing & Add to Cart (Desktop: Right Aligned, Mobile: Bottom Aligned) */}
                       <div className="flex flex-col sm:items-end gap-4 sm:gap-3 shrink-0 sm:min-w-[180px]">
                         <div className="flex sm:flex-col items-center sm:items-end gap-3 sm:gap-0">
-                          <span className="text-2xl font-black text-primary font-poppins">AED {product.price}</span>
-                          <span className="text-sm text-dark/30 line-through font-semibold">AED {product.originalPrice}</span>
+                          <span className="text-2xl font-black text-primary font-poppins">د.إ{product.price}</span>
+                          <span className="text-sm text-dark/30 line-through font-semibold">د.إ{product.originalPrice}</span>
                         </div>
 
                         <button

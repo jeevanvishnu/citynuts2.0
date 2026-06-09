@@ -139,10 +139,10 @@ export const CartPage: React.FC<CartPageProps> = ({
                             </span>
                           </div>
                         </div>
-                        
+
                         <div className="text-right">
-                          <div className="text-lg font-bold text-primary font-poppins">AED {item.price.toFixed(2)}</div>
-                          <div className="text-xs text-dark/40 line-through font-medium">AED {(item.price * 1.2).toFixed(2)}</div>
+                          <div className="text-lg font-bold text-primary font-poppins">د.إ{item.price.toFixed(2)}</div>
+                          <div className="text-xs text-dark/40 line-through font-medium">د.إ{(item.price * 1.2).toFixed(2)}</div>
                         </div>
                       </div>
 
@@ -180,7 +180,7 @@ export const CartPage: React.FC<CartPageProps> = ({
                             className="text-lg font-black font-poppins text-dark"
                           >
                             <span className="text-xs font-semibold text-dark/50 mr-1 uppercase">Total:</span>
-                            AED {(item.price * item.quantity).toFixed(2)}
+                            د.إ{(item.price * item.quantity).toFixed(2)}
                           </motion.div>
 
                           <button
@@ -207,11 +207,11 @@ export const CartPage: React.FC<CartPageProps> = ({
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center text-sm text-dark/70 font-medium">
                     <span>Subtotal</span>
-                    <span className="text-dark font-bold text-base">AED {subtotal.toFixed(2)}</span>
+                    <span className="text-dark font-bold text-base">د.إ{subtotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between items-center text-sm text-dark/70 font-medium">
-                    <span>VAT (5%)</span>
-                    <span className="text-dark font-bold text-base">AED {vat.toFixed(2)}</span>
+                  <div className="flex justify-between items-center text-dark/60 mt-3 pb-4 border-b border-primary/10">
+                    <span className="text-sm">Estimated VAT (5%)</span>
+                    <span className="text-dark font-bold text-base">د.إ{vat.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center text-sm text-dark/70 font-medium">
                     <span>Shipping</span>
@@ -225,7 +225,7 @@ export const CartPage: React.FC<CartPageProps> = ({
                 <div className="flex justify-between items-end mb-8">
                   <span className="text-lg font-bold text-dark font-poppins">Total</span>
                   <div className="text-right">
-                    <div className="text-3xl font-black text-primary font-poppins leading-none">AED {total.toFixed(2)}</div>
+                    <div className="text-3xl font-black text-primary font-poppins leading-none">د.إ{total.toFixed(2)}</div>
                     <div className="text-[10px] text-dark/40 font-semibold mt-1">Includes all applicable taxes</div>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export const CartPage: React.FC<CartPageProps> = ({
                       <strong>100% Secure Payment.</strong> Your data is encrypted and protected.
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center justify-center gap-2 pt-2">
                     <span className="text-[10px] font-bold text-dark/40 uppercase tracking-wider mr-1">We Accept</span>
                     <div className="flex gap-2">

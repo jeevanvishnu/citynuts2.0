@@ -99,9 +99,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, isWishl
         {/* Footer: Price and Add Button */}
         <div className="pt-2 border-t border-primary/5 space-y-3">
           <div className="flex items-baseline gap-2">
-            <span className="text-xl font-extrabold text-primary">₹{product.price}</span>
+            <span className="text-xl font-extrabold text-primary">د.إ{product.price}</span>
             {product.originalPrice > product.price && (
-              <span className="text-xs text-gray-400 line-through font-semibold">₹{product.originalPrice}</span>
+              <span className="text-xs text-gray-400 line-through font-semibold">د.إ{product.originalPrice}</span>
             )}
           </div>
 
@@ -201,7 +201,7 @@ export const Products: React.FC<ProductsProps> = ({ onAddToCart, wishlist, onTog
   return (
     <section id="products" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-        
+
         {/* Main Section Introduction */}
         <div className="max-w-3xl space-y-3">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-charcoal tracking-tight">

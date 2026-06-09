@@ -7,6 +7,7 @@ import { Products } from './components/Products';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { HomeFeatures } from './components/HomeFeatures';
+import { InstagramGallery } from './components/InstagramGallery';
 import type { CartItem } from './components/CartDrawer';
 import { ProductListingPage } from './components/ProductListingPage';
 import { AboutPage } from './components/AboutPage';
@@ -207,7 +208,10 @@ const App: React.FC = () => {
               onToggleWishlist={handleWishlistToggle}
             />
 
-            {/* 5. Customer Feedback / Testimonials */}
+            {/* 5. Instagram Gallery */}
+            <InstagramGallery />
+
+            {/* 6. Customer Feedback / Testimonials */}
             <Testimonials />
           </>
         )}

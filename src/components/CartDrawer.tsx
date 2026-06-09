@@ -140,7 +140,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                           </button>
                         </div>
                         <span className="font-bold text-primary text-sm sm:text-base">
-                          {(item.price * item.quantity).toFixed(2)}
+                          د.إ{(item.price * item.quantity).toFixed(2)}
                         </span>
                       </div>
                     </div>
@@ -155,7 +155,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 <div className="flex justify-between items-center text-dark font-medium">
                   <span>Subtotal</span>
                   <span className="text-xl font-bold text-gradient-pink">
-                    {subtotal.toFixed(2)}
+                    د.إ{subtotal.toFixed(2)}
                   </span>
                 </div>
                 <p className="text-xs text-dark/50">

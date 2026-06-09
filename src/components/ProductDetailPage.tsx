@@ -180,8 +180,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ onAddToCar
                     setIsWishlisted(!isWishlisted);
                   }}
                   className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 ${isWishlisted
-                      ? 'bg-[#FF6B9D] text-white shadow-[0_8px_20px_rgba(255,107,157,0.4)] border border-[#FF6B9D]'
-                      : 'bg-white/95 backdrop-blur-md text-zinc-500 hover:text-[#FF6B9D] shadow-[0_6px_16px_rgba(255,107,157,0.1)] border border-[#FFB6C1]/20 hover:border-[#FF6B9D]/30'
+                    ? 'bg-[#FF6B9D] text-white shadow-[0_8px_20px_rgba(255,107,157,0.4)] border border-[#FF6B9D]'
+                    : 'bg-white/95 backdrop-blur-md text-zinc-500 hover:text-[#FF6B9D] shadow-[0_6px_16px_rgba(255,107,157,0.1)] border border-[#FFB6C1]/20 hover:border-[#FF6B9D]/30'
                     }`}
                   aria-label="Toggle Wishlist"
                 >
@@ -198,8 +198,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ onAddToCar
                       setShowShareTooltip(!showShareTooltip);
                     }}
                     className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 ${showShareTooltip
-                        ? 'bg-[#FF6B9D] text-white shadow-[0_8px_20px_rgba(255,107,157,0.4)] border border-[#FF6B9D]'
-                        : 'bg-white/95 backdrop-blur-md text-zinc-500 hover:text-[#FF6B9D] shadow-[0_6px_16px_rgba(255,107,157,0.1)] border border-[#FFB6C1]/20 hover:border-[#FF6B9D]/30'
+                      ? 'bg-[#FF6B9D] text-white shadow-[0_8px_20px_rgba(255,107,157,0.4)] border border-[#FF6B9D]'
+                      : 'bg-white/95 backdrop-blur-md text-zinc-500 hover:text-[#FF6B9D] shadow-[0_6px_16px_rgba(255,107,157,0.1)] border border-[#FFB6C1]/20 hover:border-[#FF6B9D]/30'
                       }`}
                     aria-label="Share Product"
                   >
@@ -342,10 +342,10 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ onAddToCar
             <div className="flex flex-col gap-1 mb-8">
               <div className="flex items-baseline gap-4">
                 <span className="text-4xl font-bold text-[#FF6B9D] font-poppins leading-none">
-                  {currentPrice}
+                  د.إ{currentPrice}
                 </span>
                 <span className="text-xl text-gray-300 font-medium line-through">
-                  {currentOldPrice}
+                  د.إ{currentOldPrice}
                 </span>
               </div>
               <div>
