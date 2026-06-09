@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { 
   ArrowLeft, 
   Package, 
@@ -61,7 +62,7 @@ export const OrderDetailsPage: React.FC = () => {
     total: 'د.إ1,364'
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -69,7 +70,7 @@ export const OrderDetailsPage: React.FC = () => {
     }
   };
 
-  const staggerItem = {
+  const staggerItem: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
   };

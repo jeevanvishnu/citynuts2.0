@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import {
   User as UserIcon,
   Package,
   MapPin,
-  Heart,
-  CreditCard,
   SignOut,
-  BellRinging,
   CheckCircle,
   ArrowRight,
   Clock,
-  Sparkle,
   X
 } from '@phosphor-icons/react';
 
@@ -67,7 +64,7 @@ interface AccountPageProps {
   onNavigate: (hash: string) => void;
 }
 
-export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout, onNavigate }) => {
+export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState<'overview' | 'orders' | 'addresses' | 'settings'>('overview');
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
@@ -93,7 +90,7 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout, onNavi
   const totalPages = Math.ceil(recentOrders.length / itemsPerPage);
 
   // Motion Variants
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -101,7 +98,7 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout, onNavi
     }
   };
 
-  const staggerItem = {
+  const staggerItem: Variants = {
     hidden: { opacity: 0, y: 15 },
     show: {
       opacity: 1,
@@ -294,7 +291,7 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout, onNavi
                     </div>
                     
                     <div className="space-y-6">
-                      {paginatedOrders.map((order, i) => (
+                      {paginatedOrders.map((order) => (
                         <motion.div 
                           key={order.id}
                           variants={staggerItem}
