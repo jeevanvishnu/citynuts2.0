@@ -203,15 +203,7 @@ export const Products: React.FC<ProductsProps> = ({ onAddToCart, wishlist, onTog
     <section id="products" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
-        {/* Main Section Introduction */}
-        <div className="max-w-3xl space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-charcoal tracking-tight">
-            Browse Our Boutique Collections
-          </h2>
-          <p className="text-gray-500 text-base font-light max-w-2xl leading-relaxed">
-            Delight in our exceptional, handpicked selections. From protein-rich nuts and organic sweet dates to artisanal chocolates and superfood seeds.
-          </p>
-        </div>
+
 
         {/* 1. Nuts Section (8 cards) */}
         <CategorySection
