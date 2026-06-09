@@ -29,7 +29,7 @@ export const HeroSlider: React.FC = () => {
     setCurrent((prev) => (prev === 0 ? bannerImages.length - 1 : prev - 1));
   };
 
-  const slideVariants = {
+  const slideVariants: any = {
     enter: (direction: number) => ({
       x: direction > 0 ? '10%' : '-10%',
       opacity: 0,
