@@ -52,7 +52,7 @@ const megaMenuData: Record<string, MegaMenuData> = {
   'Nuts': {
     title: 'Explore Nuts',
     subs: ['Almonds', 'Cashews', 'Walnuts', 'Pistachios', 'Macadamia', 'Pecans', 'Brazil Nuts', 'Pine Nuts'],
-    featured: { name: 'Premium Almonds', weight: '500g', rating: '4.8', reviews: '1.5k', price: 'د.إ699', oldPrice: 'د.إ899', img: '/productimages/nuts/nuts01.png' },
+    featured: { name: 'Cashew W180', weight: '500g', rating: '4.8', reviews: '1.5k', price: 'د.إ699', oldPrice: 'د.إ899', img: '/productimages/nuts/nuts01.png' },
     promo: { title1: '100%', title2: 'Organic', subtitle: 'Premium imported quality nuts' }
   },
   'Dry Fruits': {
@@ -64,13 +64,13 @@ const megaMenuData: Record<string, MegaMenuData> = {
   'Chocolates': {
     title: 'Explore Chocolates',
     subs: ['Dark Chocolate', 'Milk Chocolate', 'White Chocolate', 'Nutty Chocolates', 'Fruit Chocolates', 'Truffles', 'Vegan Chocolates', 'Gift Boxes'],
-    featured: { name: 'Almond Truffles', weight: '200g', rating: '4.9', reviews: '1.2k', price: 'د.إ399', oldPrice: 'د.إ499', img: '/productimages/chocolates/chocolate01.webp' },
+    featured: { name: 'Snickers 50g', weight: '200g', rating: '4.9', reviews: '1.2k', price: 'د.إ399', oldPrice: 'د.إ499', img: '/productimages/chocolates/chocolate01.webp' },
     promo: { title1: 'Rich', title2: 'Cocoa', subtitle: 'Handcrafted luxury chocolates' }
   },
   'Seeds': {
     title: 'Explore Seeds',
     subs: ['Chia Seeds', 'Pumpkin Seeds', 'Sunflower Seeds', 'Flax Seeds', 'Watermelon Seeds', 'Melon Seeds', 'Quinoa', 'Mixed Seeds'],
-    featured: { name: 'Roasted Pumpkin', weight: '250g', rating: '4.6', reviews: '900', price: 'د.إ299', oldPrice: 'د.إ399', img: '/productimages/seeds/seed01.webp' },
+    featured: { name: 'Mix Chocolates Turkey', weight: '250g', rating: '4.6', reviews: '900', price: 'د.إ299', oldPrice: 'د.إ399', img: '/productimages/seeds/seed01.webp' },
     promo: { title1: 'Super', title2: 'Foods', subtitle: 'Packed with daily essential nutrients' }
   },
   'Spices': {
@@ -271,9 +271,8 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, wishlistCount, onCart
                             {/* PROMO */}
                             <div className="w-[200px] shrink-0">
                               <h3 className="text-[10px] font-bold opacity-0 mb-3">.</h3>
-                              <div className="bg-blush rounded-2xl p-6 h-full flex flex-col relative overflow-hidden">
-                                <div className="w-12 h-12 bg-white/60 rounded-xl mb-4 backdrop-blur-sm" />
-                                <div className="mt-auto">
+                              <div className="bg-blush rounded-2xl p-6 h-full flex flex-col justify-center relative overflow-hidden">
+                                <div>
                                   <div className="text-3xl font-black text-primary leading-[1.1] tracking-tight">{megaMenuData[activeCategory]?.promo.title1}</div>
                                   <div className="text-2xl font-black text-primary leading-[1.1] tracking-tight mb-4">{megaMenuData[activeCategory]?.promo.title2}</div>
                                   <p className="text-[10px] text-dark/50 font-medium leading-tight">

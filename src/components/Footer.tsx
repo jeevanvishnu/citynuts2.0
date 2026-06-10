@@ -33,10 +33,10 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-center gap-4">
               {[
-                { icon: <FacebookLogo size={20} weight="fill" />, href: '#' },
-                { icon: <TiktokLogo size={20} weight="fill" />, href: '#' },
-                { icon: <InstagramLogo size={20} weight="fill" />, href: '#' },
-                { icon: <WhatsappLogo size={20} weight="fill" />, href: '#' },
+                { icon: <FacebookLogo size={20} weight="fill" />, href: 'https://www.facebook.com/people/Citynuts/61580152072365/' },
+                { icon: <TiktokLogo size={20} weight="fill" />, href: 'https://www.tiktok.com/@citynutsonline' },
+                { icon: <InstagramLogo size={20} weight="fill" />, href: 'https://www.instagram.com/citynutsonline' },
+                { icon: <WhatsappLogo size={20} weight="fill" />, href: 'https://web.whatsapp.com/send?phone=971523032582&text=' },
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -88,7 +88,6 @@ export const Footer: React.FC = () => {
                 { name: 'About Us', href: '#about' },
                 { name: 'Shop', href: '#products' },
                 { name: 'Contact Us', href: '#contact' },
-                { name: 'Subscribe Now', href: '#subscribe' },
               ].map((link) => (
                 <li key={link.name}>
                   <a
@@ -141,10 +140,10 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-white/40">
-          <p>Copyright &copy; {currentYear} citynuts All Rights Reserved.</p>
+          <p>Copyright &copy; {currentYear} CityNuts All Rights Reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms & Condition</a>
+            <a href="#privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#terms" className="hover:text-primary transition-colors">Terms & Condition</a>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export interface ProductData {
 export const productsData: ProductData[] = [
   {
     id: 'prod-almonds-1',
-    name: 'Premium Californian Almonds',
+    name: 'Cashew W180',
     category: 'Nuts',
     image: '/productimages/nuts/nuts01.png',
     price: 650,
@@ -33,7 +33,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-walnuts-1',
-    name: 'Royal Chilean Walnuts halves',
+    name: 'Cashew W240',
     category: 'Nuts',
     image: '/productimages/nuts/nuts02.webp',
     price: 850,
@@ -48,7 +48,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-pistachios-1',
-    name: 'Roasted Sea Salt Pistachios',
+    name: 'Long Cutting Almond',
     category: 'Nuts',
     image: '/productimages/nuts/nuts03.png',
     price: 950,
@@ -63,7 +63,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-1',
-    name: 'Premium Medjool Dates',
+    name: 'Majdool Dates – Palestine (Jumbo)',
     category: 'Dates',
     image: '/productimages/dates/dates01.png',
     price: 550,
@@ -78,7 +78,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-cashews-1',
-    name: 'Jumbo Roasted Cashews',
+    name: 'Long Cutting Pista',
     category: 'Nuts',
     image: '/productimages/nuts/nuts04.png',
     price: 850,
@@ -108,7 +108,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-mixed-1',
-    name: 'Deluxe Mixed Nuts',
+    name: 'Macadamia Nuts',
     category: 'Nuts',
     image: '/productimages/nuts/nuts5.png',
     price: 1200,
@@ -123,7 +123,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-almonds-2',
-    name: 'Organic Mamra Almonds',
+    name: 'Pecan Nuts Kernal',
     category: 'Nuts',
     image: '/productimages/nuts/nuts06.png',
     price: 1800,
@@ -138,7 +138,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-cashews-2',
-    name: 'Spicy Peri-Peri Cashews',
+    name: 'Cashew',
     category: 'Nuts',
     image: '/productimages/nuts/nuts07.png',
     price: 550,
@@ -153,7 +153,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-pistachios-2',
-    name: 'Iranian Long Pistachios',
+    name: 'Cashew Roasted W180',
     category: 'Nuts',
     image: '/productimages/nuts/nuts08.png',
     price: 1900,
@@ -198,7 +198,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-2',
-    name: 'Royal Ajwa Dates Madinah',
+    name: 'Majdool Dates – Jordan (Large)',
     category: 'Dates',
     image: '/productimages/dates/dates02.png',
     price: 1200,
@@ -213,7 +213,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-3',
-    name: 'Premium Kalmi Dates',
+    name: 'Majdool Dates – Palestine (Large)',
     category: 'Dates',
     image: '/productimages/dates/dates03.png',
     price: 380,
@@ -333,7 +333,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-4',
-    name: 'Stuffed Almond Medjool Dates',
+    name: 'Safawi Dates (Medium)',
     category: 'Dates',
     image: '/productimages/dates/dates04.png',
     price: 750,
@@ -379,7 +379,7 @@ export const productsData: ProductData[] = [
   // Chocolates
   {
     id: 'prod-chocolates-1',
-    name: 'Luxury Almond Dark Chocolate Truffles',
+    name: 'Snickers 50g',
     category: 'Chocolates',
     image: '/productimages/chocolates/chocolate01.webp',
     price: 1250,
@@ -394,7 +394,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-chocolates-2',
-    name: 'Gourmet Pistachio Milk Chocolate Bar',
+    name: 'Mix Chocolates Turkey',
     category: 'Chocolates',
     image: '/productimages/chocolates/chocolate02.webp',
     price: 650,
@@ -410,7 +410,7 @@ export const productsData: ProductData[] = [
   // Seeds
   {
     id: 'prod-seeds-1',
-    name: 'Organic Roasted Pumpkin Seeds',
+    name: 'Mix Chocolates Turkey',
     category: 'Seeds',
     image: '/productimages/seeds/seed01.webp',
     price: 320,
@@ -425,7 +425,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-seeds-2',
-    name: 'Premium Chia & Flax Seed Mix',
+    name: 'Pine seed Inshell',
     category: 'Seeds',
     image: '/productimages/seeds/seed02.webp',
     price: 280,
@@ -518,7 +518,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-6',
-    name: 'Organic Deglet Nour Dates',
+    name: 'Sukkarey Dates 3kg',
     category: 'Dates',
     image: '/productimages/dates/dates01.png',
     price: 480,
@@ -533,7 +533,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-7',
-    name: 'Sukkari Golden Dates',
+    name: 'Majdool Dates – Jordan (Large)',
     category: 'Dates',
     image: '/productimages/dates/dates02.png',
     price: 690,
@@ -548,7 +548,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-8',
-    name: 'Premium Mabroom Dates',
+    name: 'Majdool Dates – Palestine (Large)',
     category: 'Dates',
     image: '/productimages/dates/dates03.png',
     price: 799,
@@ -564,7 +564,7 @@ export const productsData: ProductData[] = [
   // Extra Chocolates to make 8
   {
     id: 'prod-chocolates-3',
-    name: 'Hazelnut Praline Milk Chocolate',
+    name: 'Toblerone 35g',
     category: 'Chocolates',
     image: '/productimages/chocolates/chocolate03.webp',
     price: 450,
@@ -579,7 +579,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-chocolates-4',
-    name: 'Assorted Dark Almond Bark',
+    name: 'Toblerone 100g',
     category: 'Chocolates',
     image: '/productimages/chocolates/chocolate04.webp',
     price: 899,
@@ -594,7 +594,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-chocolates-5',
-    name: 'Cashew Butter Chocolate Cups',
+    name: 'Toblerone Dark',
     category: 'Chocolates',
     image: '/productimages/chocolates/chocolate05.webp',
     price: 550,
@@ -609,7 +609,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-chocolates-6',
-    name: 'Salted Caramel Walnut Fudge Bar',
+    name: 'Toblerone White 100g',
     category: 'Chocolates',
     image: '/productimages/chocolates/chocolate06.webp',
     price: 499,
@@ -624,7 +624,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-chocolates-7',
-    name: 'White Cranberry Pistachio Slab',
+    name: 'Twix 50g',
     category: 'Chocolates',
     image: '/productimages/chocolates/chocolate07.webp',
     price: 580,
@@ -639,7 +639,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-chocolates-8',
-    name: 'Royal Chocolate Date Delights',
+    name: 'Mix Chocolates Turkey',
     category: 'Chocolates',
     image: '/productimages/chocolates/chocolate08.webp',
     price: 950,
@@ -655,7 +655,7 @@ export const productsData: ProductData[] = [
   // Extra Seeds to make 8
   {
     id: 'prod-seeds-3',
-    name: 'Roasted Sunflower Seeds Salted',
+    name: 'Pine Seed Kernal',
     category: 'Seeds',
     image: '/productimages/seeds/seed03.webp',
     price: 240,
@@ -670,7 +670,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-seeds-4',
-    name: 'Raw Organic Hemp Hearts',
+    name: 'Pumpkin Seeds Kernals',
     category: 'Seeds',
     image: '/productimages/seeds/seed04.webp',
     price: 590,
@@ -685,7 +685,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-seeds-5',
-    name: 'Spiced Roasted Melon Seeds',
+    name: 'Pumpkin Seeds Roasted',
     category: 'Seeds',
     image: '/productimages/seeds/seed05.webp',
     price: 180,
@@ -700,7 +700,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-seeds-6',
-    name: 'Superfood 5-Seed Roasted Mix',
+    name: 'Sunflower Seeds Kernals',
     category: 'Seeds',
     image: '/productimages/seeds/seed06.webp',
     price: 450,
@@ -715,7 +715,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-seeds-7',
-    name: 'Honey Glazed Sesame Seeds',
+    name: 'Sunflower Seeds Roasted',
     category: 'Seeds',
     image: '/productimages/seeds/seed07.webp',
     price: 220,
@@ -730,7 +730,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-seeds-8',
-    name: 'Organic Raw Black Chia Seeds',
+    name: 'Watermelon Super Seeds',
     category: 'Seeds',
     image: '/productimages/seeds/seed08.webp',
     price: 350,

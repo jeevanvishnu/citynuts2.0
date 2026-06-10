@@ -6,8 +6,6 @@ import {
   User as UserIcon, 
   Eye, 
   EyeSlash, 
-  GoogleLogo, 
-  AppleLogo, 
   Sparkle, 
   CheckCircle,
   Warning,
@@ -288,7 +286,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
           {/* Sparkle Header */}
           <div className="relative z-10 flex items-center gap-2">
             <Sparkle size={24} weight="fill" className="text-white animate-pulse-slow" />
-            <span className="text-white font-bold tracking-[0.2em] text-[10px] uppercase font-poppins">City Nuts Boutique</span>
+            <span className="text-white font-bold tracking-[0.2em] text-[10px] uppercase font-poppins">City Nuts</span>
           </div>
 
           {/* Decorative Rotating Mandala Graphic */}
@@ -388,7 +386,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                 <motion.div variants={staggerItem} className="space-y-1.5">
                   <h1 className="text-3xl font-black tracking-tight text-dark">Welcome back</h1>
                   <p className="text-xs text-dark/50 font-light">
-                    Access your boutique portfolio and orders.
+                    Access your portfolio and orders.
                   </p>
                 </motion.div>
 
@@ -400,7 +398,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                       <input
                         type="email"
                         disabled={isLoading}
-                        placeholder="e.g. eleanor.vance@boutique.com"
+                        placeholder="Email Address"
                         value={signInData.email}
                         onChange={(e) => setSignInData({ ...signInData, email: e.target.value })}
                         className={`w-full border ${errors.email ? 'border-primary bg-primary/5' : 'border-dark/5 bg-white/40 focus:border-primary focus:ring-primary/10'} rounded-xl pl-11 pr-5 py-3.5 text-xs text-dark placeholder:text-dark/30 focus:outline-none focus:ring-2 transition-all duration-200`}
@@ -479,31 +477,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                   </motion.div>
                 </form>
 
-                {/* Social logins */}
-                <motion.div variants={staggerItem} className="space-y-4">
-                  <div className="relative flex items-center">
-                    <div className="flex-grow border-t border-dark/5"></div>
-                    <span className="flex-shrink mx-4 text-dark/30 text-[9px] font-bold tracking-widest uppercase">Or connect via</span>
-                    <div className="flex-grow border-t border-dark/5"></div>
-                  </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <MagneticButton
-                      disabled={isLoading}
-                      className="flex items-center justify-center gap-2 py-3 border border-dark/5 hover:border-dark/15 rounded-xl bg-white/30 text-xs font-bold text-dark transition-all duration-200 cursor-pointer"
-                    >
-                      <GoogleLogo size={16} weight="bold" className="text-dark/70" />
-                      <span>Google</span>
-                    </MagneticButton>
-                    <MagneticButton
-                      disabled={isLoading}
-                      className="flex items-center justify-center gap-2 py-3 border border-dark/5 hover:border-dark/15 rounded-xl bg-white/30 text-xs font-bold text-dark transition-all duration-200 cursor-pointer"
-                    >
-                      <AppleLogo size={16} weight="fill" className="text-dark/90" />
-                      <span>Apple ID</span>
-                    </MagneticButton>
-                  </div>
-                </motion.div>
 
                 {/* Toggle sign up */}
                 <motion.div variants={staggerItem} className="pt-2 text-center">
@@ -537,7 +511,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                 <motion.div variants={staggerItem} className="space-y-1">
                   <h1 className="text-3xl font-black tracking-tight text-dark">Create Profile</h1>
                   <p className="text-xs text-dark/50 font-light">
-                    Join the boutique connoisseur club.
+                    Join the connoisseur club.
                   </p>
                 </motion.div>
 
@@ -549,7 +523,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                       <input
                         type="text"
                         disabled={isLoading}
-                        placeholder="e.g. Eleanor Vance"
+                        placeholder="Full Name"
                         value={signUpData.name}
                         onChange={(e) => setSignUpData({ ...signUpData, name: e.target.value })}
                         className={`w-full border ${errors.name ? 'border-primary bg-primary/5' : 'border-dark/5 bg-white/40 focus:border-primary'} rounded-xl pl-11 pr-5 py-3 text-xs text-dark placeholder:text-dark/30 focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200`}
@@ -570,7 +544,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                       <input
                         type="email"
                         disabled={isLoading}
-                        placeholder="e.g. eleanor.vance@boutique.com"
+                        placeholder="Email Address"
                         value={signUpData.email}
                         onChange={(e) => setSignUpData({ ...signUpData, email: e.target.value })}
                         className={`w-full border ${errors.email ? 'border-primary bg-primary/5' : 'border-dark/5 bg-white/40 focus:border-primary'} rounded-xl pl-11 pr-5 py-3 text-xs text-dark placeholder:text-dark/30 focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200`}
@@ -591,7 +565,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                       <input
                         type="tel"
                         disabled={isLoading}
-                        placeholder="e.g. +971 52 303 2577"
+                        placeholder="Phone Number"
                         value={signUpData.phone}
                         onChange={(e) => setSignUpData({ ...signUpData, phone: e.target.value })}
                         className={`w-full border ${errors.phone ? 'border-primary bg-primary/5' : 'border-dark/5 bg-white/40 focus:border-primary'} rounded-xl pl-11 pr-5 py-3 text-xs text-dark placeholder:text-dark/30 focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200`}
@@ -612,7 +586,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                       <input
                         type={showPassword ? 'text' : 'password'}
                         disabled={isLoading}
-                        placeholder="•••••••• (Min. 6 chars)"
+                        placeholder="••••••••"
                         value={signUpData.password}
                         onChange={(e) => setSignUpData({ ...signUpData, password: e.target.value })}
                         className={`w-full border ${errors.password ? 'border-primary bg-primary/5' : 'border-dark/5 bg-white/40 focus:border-primary'} rounded-xl pl-11 pr-11 py-3 text-xs text-dark placeholder:text-dark/30 focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200`}
@@ -739,7 +713,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
                         <input
                           type="email"
                           disabled={isLoading}
-                          placeholder="e.g. eleanor.vance@boutique.com"
+                          placeholder="Email Address"
                           value={forgotData.email}
                           onChange={(e) => setForgotData({ email: e.target.value })}
                           className={`w-full border ${errors.email ? 'border-primary bg-primary/5' : 'border-dark/5 bg-white/40 focus:border-primary'} rounded-xl pl-11 pr-5 py-3.5 text-xs text-dark placeholder:text-dark/30 focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200`}

@@ -19,6 +19,8 @@ import { CheckoutPage } from './components/CheckoutPage';
 import { LoginPage } from './components/LoginPage';
 import { AccountPage } from './components/AccountPage';
 import { OrderDetailsPage } from './components/OrderDetailsPage';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
 import { MagnifyingGlass, X, Check } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -34,7 +36,7 @@ const App: React.FC = () => {
     return saved ? JSON.parse(saved) : null;
   });
 
-  const [currentPage, setCurrentPage] = useState<'home' | 'products' | 'about' | 'contact' | 'product-detail' | 'cart' | 'wishlist' | 'checkout' | 'login' | 'account' | 'order-details'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'products' | 'about' | 'contact' | 'product-detail' | 'cart' | 'wishlist' | 'checkout' | 'login' | 'account' | 'order-details' | 'privacy' | 'terms'>(() => {
     if (window.location.hash.startsWith('#products')) return 'products';
     if (window.location.hash === '#about') return 'about';
     if (window.location.hash === '#contact') return 'contact';
@@ -45,6 +47,8 @@ const App: React.FC = () => {
     if (window.location.hash === '#login') return 'login';
     if (window.location.hash === '#account') return 'account';
     if (window.location.hash === '#order-details') return 'order-details';
+    if (window.location.hash === '#privacy') return 'privacy';
+    if (window.location.hash === '#terms') return 'terms';
     return 'home';
   });
 
@@ -79,6 +83,12 @@ const App: React.FC = () => {
         window.scrollTo(0, 0);
       } else if (window.location.hash === '#order-details') {
         setCurrentPage('order-details');
+        window.scrollTo(0, 0);
+      } else if (window.location.hash === '#privacy') {
+        setCurrentPage('privacy');
+        window.scrollTo(0, 0);
+      } else if (window.location.hash === '#terms') {
+        setCurrentPage('terms');
         window.scrollTo(0, 0);
       } else {
         setCurrentPage('home');
@@ -304,6 +314,14 @@ const App: React.FC = () => {
         {currentPage === 'order-details' && (
           <OrderDetailsPage />
         )}
+
+        {currentPage === 'privacy' && (
+          <PrivacyPolicyPage />
+        )}
+
+        {currentPage === 'terms' && (
+          <TermsAndConditionsPage />
+        )}
       </main>
 
       {/* 6. Footer Section */}
@@ -334,7 +352,7 @@ const App: React.FC = () => {
             >
               <h3 className="text-xl font-bold text-dark flex items-center gap-2">
                 <MagnifyingGlass size={22} className="text-primary font-bold" />
-                Search our Boutique
+                Search
               </h3>
 
               <form onSubmit={handleSearchSubmit} className="flex gap-2">

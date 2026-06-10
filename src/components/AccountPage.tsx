@@ -145,7 +145,7 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
             Personal Information
           </h1>
           <p className="text-dark/50 text-sm max-w-xl font-light">
-            Manage your boutique preferences, track recent harvests, and update your personal connoisseur profile.
+            Manage your preferences, track recent harvests, and update your personal connoisseur profile.
           </p>
         </motion.div>
 
@@ -384,10 +384,10 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
                   <SpotlightCard className="bg-white rounded-[2.5rem] p-10 lg:p-16 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.03)] border border-slate-200/50 flex flex-col items-center justify-center text-center min-h-[400px]">
 
                     <h2 className="text-2xl font-black text-dark tracking-tight mb-3 capitalize">
-                      Addresses Management
+                      My Address
                     </h2>
                     <p className="text-sm text-dark/50 max-w-md mx-auto mb-8 font-light">
-                      This section is currently being polished for our premium connoisseurs. It will be available shortly.
+                      Manage your shipping addresses for a seamless checkout experience.
                     </p>
                     <button 
                       onClick={() => setIsAddressModalOpen(true)}
@@ -517,7 +517,7 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
                     <label className="text-[10px] font-bold text-dark/70 tracking-wide uppercase mb-1.5 block">Full Name</label>
                     <input 
                       type="text" 
-                      placeholder="e.g. John Doe"
+                      placeholder="Full Name"
                       className="w-full border border-dark/5 bg-white focus:border-primary rounded-xl px-4 py-3 text-xs text-dark focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200" 
                     />
                   </div>
@@ -525,7 +525,7 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
                     <label className="text-[10px] font-bold text-dark/70 tracking-wide uppercase mb-1.5 block">Street Address</label>
                     <input 
                       type="text" 
-                      placeholder="e.g. 123 Main St, Apt 4B"
+                      placeholder="Street Address"
                       className="w-full border border-dark/5 bg-white focus:border-primary rounded-xl px-4 py-3 text-xs text-dark focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200" 
                     />
                   </div>
@@ -534,7 +534,7 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
                       <label className="text-[10px] font-bold text-dark/70 tracking-wide uppercase mb-1.5 block">City</label>
                       <input 
                         type="text" 
-                        placeholder="e.g. Dubai"
+                        placeholder="City"
                         className="w-full border border-dark/5 bg-white focus:border-primary rounded-xl px-4 py-3 text-xs text-dark focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200" 
                       />
                     </div>
@@ -542,7 +542,7 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
                       <label className="text-[10px] font-bold text-dark/70 tracking-wide uppercase mb-1.5 block">Postal Code</label>
                       <input 
                         type="text" 
-                        placeholder="e.g. 00000"
+                        placeholder="Postal Code"
                         className="w-full border border-dark/5 bg-white focus:border-primary rounded-xl px-4 py-3 text-xs text-dark focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200" 
                       />
                     </div>

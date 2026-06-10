@@ -25,7 +25,7 @@ import {
   ShareNetwork,
 } from '@phosphor-icons/react';
 import type { CartItem } from './CartDrawer';
-import { InformationBanner } from './InformationBanner';
+
 
 interface ProductDetailPageProps {
   onAddToCart: (item: CartItem) => void;
@@ -734,10 +734,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ onAddToCar
       {/* 5. Recently Viewed Section */}
       <ProductSwiperSection title="Recently Viewed" background="bg-white" />
 
-      {/* 6. Trust & Guarantee Banner */}
-      <div className="mt-8">
-        <InformationBanner />
-      </div>
+
 
     </div>
   );
@@ -760,11 +757,11 @@ const ProductSwiperSection = ({ title, background }: { title: string, background
   };
 
   const dummyProducts = [
-    { name: 'Jumbo Roasted Cashews', price: 85, old: 105, img: '/productimages/nuts/nuts04.png', badge: 'Hot' },
-    { name: 'Roasted Pistachios', price: 95, old: 125, img: '/productimages/nuts/nuts03.png', badge: 'Sale' },
-    { name: 'Premium Medjool Dates', price: 55, old: 75, img: '/productimages/dates/dates01.png', badge: 'New' },
-    { name: 'Royal Chilean Walnuts', price: 85, old: 110, img: '/productimages/nuts/nuts02.webp', badge: '' },
-    { name: 'Deluxe Mixed Nuts', price: 120, old: 150, img: '/productimages/nuts/nuts5.png', badge: '' },
+    { name: 'Long Cutting Pista', price: 85, old: 105, img: '/productimages/nuts/nuts04.png', badge: 'Hot' },
+    { name: 'Long Cutting Almond', price: 95, old: 125, img: '/productimages/nuts/nuts03.png', badge: 'Sale' },
+    { name: 'Majdool Dates – Palestine (Jumbo)', price: 55, old: 75, img: '/productimages/dates/dates01.png', badge: 'New' },
+    { name: 'Cashew W240', price: 85, old: 110, img: '/productimages/nuts/nuts02.webp', badge: '' },
+    { name: 'Macadamia Nuts', price: 120, old: 150, img: '/productimages/nuts/nuts5.png', badge: '' },
   ];
 
   return (

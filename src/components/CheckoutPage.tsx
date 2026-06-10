@@ -492,7 +492,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                           id="email"
                           type="email"
                           name="email"
-                          placeholder="e.g., alex.smith@domain.com"
+                          placeholder="Email Address"
                           value={formData.email}
                           onChange={handleInputChange}
                           className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary bg-slate-50/50 transition-all font-light ${errors.email ? 'border-red-400 focus:border-red-400' : 'border-slate-200'}`}
@@ -528,7 +528,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                           id="phone"
                           type="tel"
                           name="phone"
-                          placeholder="e.g., +971 50 123 4567"
+                          placeholder="Mobile Number"
                           value={formData.phone}
                           onChange={handleInputChange}
                           className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary bg-slate-50/50 transition-all font-light ${errors.phone ? 'border-red-400 focus:border-red-400' : 'border-slate-200'}`}
@@ -578,7 +578,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                             id="city"
                             type="text"
                             name="city"
-                            placeholder="e.g., Marina / Downtown"
+                            placeholder="City / Area"
                             value={formData.city}
                             onChange={handleInputChange}
                             className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary bg-slate-50/50 transition-all font-light ${errors.city ? 'border-red-400 focus:border-red-400' : 'border-slate-200'}`}
@@ -969,16 +969,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ cartItems, onOrderSu
                   </div>
                 </div>
 
-                {/* Bottom Trust Stamp */}
-                <div className="bg-[#FFF5F9] rounded-2xl p-4 flex items-start gap-3 border border-primary/5">
-                  <ShieldCheck size={20} className="text-primary shrink-0 mt-0.5" weight="duotone" />
-                  <div className="space-y-0.5">
-                    <p className="text-xs font-bold text-dark">SSL Security Certified</p>
-                    <p className="text-[10px] text-dark/60 leading-normal font-light">
-                      Payment info is fully tokenized and never saved locally.
-                    </p>
-                  </div>
-                </div>
+
               </div>
             </div>
 

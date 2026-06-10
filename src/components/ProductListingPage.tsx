@@ -396,7 +396,7 @@ export const ProductListingPage: React.FC<ProductListingPageProps> = ({ onAddToC
             <span className="w-20 h-1 bg-gradient-pink rounded-full" />
           </h1>
           <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
-            Delve into our boutique collection of hand-picked, exceptionally sourced organic nuts, premium dates, and dried fruits roasted to crisp perfection.
+            Delve into our collection of hand-picked, exceptionally sourced organic nuts, premium dates, and dried fruits roasted to crisp perfection.
           </p>
         </div>
       </div>
