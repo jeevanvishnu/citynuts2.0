@@ -116,7 +116,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ onAddToCar
     <div className="bg-[#FFFFFF] min-h-[100dvh] pt-[80px] pb-20 font-sans tracking-tight">
 
       {/* 1. Sticky Navigation Breadcrumb Bar */}
-      <div className="sticky top-[80px] z-40 bg-white/80 backdrop-blur-xl border-b border-zinc-100">
+      <div className=" top-[80px] z-40 bg-white/80 backdrop-blur-xl border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center gap-2 text-sm font-medium">
             <a href="#home" className="text-zinc-400 hover:text-zinc-900 transition-colors">Home</a>
