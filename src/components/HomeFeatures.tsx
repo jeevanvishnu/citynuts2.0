@@ -5,13 +5,13 @@ import { ArrowRight } from '@phosphor-icons/react';
 const categories = [
   {
     title: 'Dates',
-    image: '/home/category02.webp',
-    link: '#products?category=Nuts',
+    image: '/home/category01.webp',
+    link: '#products?category=Dates',
   },
   {
     title: 'Nuts',
-    image: '/home/category01.webp',
-    link: '#products?category=Dates',
+    image: '/home/category02.webp',
+    link: '#products?category=Nuts',
   },
   {
     title: 'Dry fruits',

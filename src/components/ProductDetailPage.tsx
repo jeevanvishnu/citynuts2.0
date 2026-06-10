@@ -32,10 +32,10 @@ interface ProductDetailPageProps {
 }
 
 const IMAGES = [
-  '/productimages/imgi_18_AJWA-DATES-LARGE.png',
-  '/productimages/imgi_477_5.png',
-  '/productimages/imgi_90_premium-nuts-2048x2048.png',
-  '/productimages/imgi_480_web-1.png',
+  '/productimages/dates/dates01.png',
+  '/productimages/dates/dates02.png',
+  '/productimages/dates/dates03.png',
+  '/productimages/dates/dates04.png',
 ];
 
 const WEIGHTS = [
@@ -760,11 +760,11 @@ const ProductSwiperSection = ({ title, background }: { title: string, background
   };
 
   const dummyProducts = [
-    { name: 'Jumbo Roasted Cashews', price: 85, old: 105, img: '/productimages/imgi_480_web-1.png', badge: 'Hot' },
-    { name: 'Roasted Pistachios', price: 95, old: 125, img: '/productimages/imgi_481_web-2.png', badge: 'Sale' },
-    { name: 'Premium Medjool Dates', price: 55, old: 75, img: '/productimages/imgi_18_AJWA-DATES-LARGE.png', badge: 'New' },
-    { name: 'Royal Chilean Walnuts', price: 85, old: 110, img: '/productimages/imgi_26_1-4.png.webp', badge: '' },
-    { name: 'Deluxe Mixed Nuts', price: 120, old: 150, img: '/productimages/imgi_90_premium-nuts-2048x2048.png', badge: '' },
+    { name: 'Jumbo Roasted Cashews', price: 85, old: 105, img: '/productimages/nuts/nuts04.png', badge: 'Hot' },
+    { name: 'Roasted Pistachios', price: 95, old: 125, img: '/productimages/nuts/nuts03.png', badge: 'Sale' },
+    { name: 'Premium Medjool Dates', price: 55, old: 75, img: '/productimages/dates/dates01.png', badge: 'New' },
+    { name: 'Royal Chilean Walnuts', price: 85, old: 110, img: '/productimages/nuts/nuts02.webp', badge: '' },
+    { name: 'Deluxe Mixed Nuts', price: 120, old: 150, img: '/productimages/nuts/nuts5.png', badge: '' },
   ];
 
   return (

@@ -119,7 +119,7 @@ export const CartPage: React.FC<CartPageProps> = ({
                     {/* Item Image */}
                     <div className="relative w-32 h-32 sm:w-36 sm:h-36 shrink-0 bg-[#FFF5F9] rounded-xl flex items-center justify-center p-3 overflow-hidden">
                       <img
-                        src={item.image || '/productimages/imgi_24_almond3.png.webp'}
+                        src={item.image || '/productimages/nuts/nuts01.png'}
                         alt={item.name}
                         className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md mix-blend-multiply"
                       />

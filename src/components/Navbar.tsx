@@ -46,43 +46,43 @@ const megaMenuData: Record<string, MegaMenuData> = {
   'Dates': {
     title: 'Explore Dates',
     subs: ['Medjool Dates', 'Ajwa Dates', 'Safawi Dates', 'Kimia Dates', 'Pitted Dates', 'Date Rolls', 'Stuffed Dates', 'Date Syrup'],
-    featured: { name: 'Medjool Dates', weight: '500g', rating: '4.9', reviews: '2.1k', price: 'د.إ599', oldPrice: 'د.إ799', img: '/productimages/imgi_18_AJWA-DATES-LARGE.png' },
+    featured: { name: 'Medjool Dates', weight: '500g', rating: '4.9', reviews: '2.1k', price: 'د.إ599', oldPrice: 'د.إ799', img: '/productimages/dryfruits/dryfruit04.png' },
     promo: { title1: '12+', title2: 'varieties', subtitle: 'Sourced from Oman & Saudi Arabia' }
   },
   'Nuts': {
     title: 'Explore Nuts',
     subs: ['Almonds', 'Cashews', 'Walnuts', 'Pistachios', 'Macadamia', 'Pecans', 'Brazil Nuts', 'Pine Nuts'],
-    featured: { name: 'Premium Almonds', weight: '500g', rating: '4.8', reviews: '1.5k', price: 'د.إ699', oldPrice: 'د.إ899', img: '/productimages/imgi_24_almond3.png.webp' },
+    featured: { name: 'Premium Almonds', weight: '500g', rating: '4.8', reviews: '1.5k', price: 'د.إ699', oldPrice: 'د.إ899', img: '/productimages/nuts/nuts01.png' },
     promo: { title1: '100%', title2: 'Organic', subtitle: 'Premium imported quality nuts' }
   },
   'Dry Fruits': {
     title: 'Explore Dry Fruits',
     subs: ['Dried Figs', 'Apricots', 'Raisins', 'Dried Mango', 'Prunes', 'Dried Kiwi', 'Dried Berries', 'Mixed Dry Fruits'],
-    featured: { name: 'Afghan Figs', weight: '250g', rating: '4.7', reviews: '850', price: 'د.إ499', oldPrice: 'د.إ599', img: '/productimages/imgi_19_dryfruit.png.webp' },
+    featured: { name: 'Afghan Figs', weight: '250g', rating: '4.7', reviews: '850', price: 'د.إ499', oldPrice: 'د.إ599', img: '/productimages/dryfruits/dryfruit01.webp' },
     promo: { title1: 'No', title2: 'Sugar', subtitle: 'Naturally sweet and nutritious' }
   },
   'Chocolates': {
     title: 'Explore Chocolates',
     subs: ['Dark Chocolate', 'Milk Chocolate', 'White Chocolate', 'Nutty Chocolates', 'Fruit Chocolates', 'Truffles', 'Vegan Chocolates', 'Gift Boxes'],
-    featured: { name: 'Almond Truffles', weight: '200g', rating: '4.9', reviews: '1.2k', price: 'د.إ399', oldPrice: 'د.إ499', img: '/productimages/imgi_479_4.png' },
+    featured: { name: 'Almond Truffles', weight: '200g', rating: '4.9', reviews: '1.2k', price: 'د.إ399', oldPrice: 'د.إ499', img: '/productimages/chocolates/chocolate01.webp' },
     promo: { title1: 'Rich', title2: 'Cocoa', subtitle: 'Handcrafted luxury chocolates' }
   },
   'Seeds': {
     title: 'Explore Seeds',
     subs: ['Chia Seeds', 'Pumpkin Seeds', 'Sunflower Seeds', 'Flax Seeds', 'Watermelon Seeds', 'Melon Seeds', 'Quinoa', 'Mixed Seeds'],
-    featured: { name: 'Roasted Pumpkin', weight: '250g', rating: '4.6', reviews: '900', price: 'د.إ299', oldPrice: 'د.إ399', img: '/productimages/imgi_82_1-7-460x460.png.webp' },
+    featured: { name: 'Roasted Pumpkin', weight: '250g', rating: '4.6', reviews: '900', price: 'د.إ299', oldPrice: 'د.إ399', img: '/productimages/seeds/seed01.webp' },
     promo: { title1: 'Super', title2: 'Foods', subtitle: 'Packed with daily essential nutrients' }
   },
   'Spices': {
     title: 'Explore Spices',
     subs: ['Saffron', 'Cardamom', 'Cinnamon', 'Cloves', 'Black Pepper', 'Nutmeg', 'Star Anise', 'Mace'],
-    featured: { name: 'Kashmiri Saffron', weight: '5g', rating: '5.0', reviews: '3.4k', price: 'د.إ1499', oldPrice: 'د.إ1899', img: '/productimages/imgi_16_1.png.webp' },
+    featured: { name: 'Kashmiri Saffron', weight: '5g', rating: '5.0', reviews: '3.4k', price: 'د.إ1499', oldPrice: 'د.إ1899', img: '/productimages/dryfruits/dryfruit04.png' },
     promo: { title1: 'Pure', title2: 'Aroma', subtitle: 'Authentic spices sourced locally' }
   },
   'Gifts': {
     title: 'Explore Gifts',
     subs: ['Corporate Gifts', 'Wedding Favors', 'Festive Hampers', 'Birthday Boxes', 'Anniversary Gifts', 'Custom Hampers', 'Luxury Boxes', 'Budget Friendly'],
-    featured: { name: 'Royal Hamper', weight: '1kg', rating: '4.9', reviews: '500', price: 'د.إ2499', oldPrice: 'د.إ2999', img: '/productimages/imgi_90_premium-nuts-2048x2048.png' },
+    featured: { name: 'Royal Hamper', weight: '1kg', rating: '4.9', reviews: '500', price: 'د.إ2499', oldPrice: 'د.إ2999', img: '/productimages/dryfruits/dryfruit06.webp' },
     promo: { title1: 'Premium', title2: 'Gifting', subtitle: 'Make every occasion memorable' }
   }
 };

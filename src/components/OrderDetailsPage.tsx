@@ -53,8 +53,8 @@ export const OrderDetailsPage: React.FC = () => {
       country: 'United Arab Emirates'
     },
     items: [
-      { id: 1, name: 'Royal Hamper Box', price: 'د.إ899', quantity: 1, img: '/productimages/imgi_90_premium-nuts-2048x2048.png' },
-      { id: 2, name: 'Premium Afghan Figs', price: 'د.إ200', quantity: 2, img: '/productimages/imgi_19_dryfruit.png.webp' },
+      { id: 1, name: 'Royal Hamper Box', price: 'د.إ899', quantity: 1, img: '/productimages/dryfruits/dryfruit06.webp' },
+      { id: 2, name: 'Premium Afghan Figs', price: 'د.إ200', quantity: 2, img: '/productimages/dryfruits/dryfruit01.webp' },
     ],
     subtotal: 'د.إ1,299',
     shipping: 'د.إ0',

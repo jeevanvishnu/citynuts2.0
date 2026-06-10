@@ -79,11 +79,11 @@ export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
 
   // Dummy Data for Orders
   const recentOrders = [
-    { id: '#CN-9482', date: 'Oct 24, 2026', total: 'د.إ1,299', status: 'Delivered', items: 'Royal Hamper', additionalItems: 2, img: '/productimages/imgi_90_premium-nuts-2048x2048.png' },
-    { id: '#CN-9451', date: 'Sep 12, 2026', total: 'د.إ499', status: 'Processing', items: 'Afghan Figs', additionalItems: 0, img: '/productimages/imgi_19_dryfruit.png.webp' },
-    { id: '#CN-9310', date: 'Aug 05, 2026', total: 'د.إ899', status: 'Delivered', items: 'Medjool Dates', additionalItems: 1, img: '/productimages/imgi_18_AJWA-DATES-LARGE.png' },
-    { id: '#CN-9120', date: 'Jul 18, 2026', total: 'د.إ350', status: 'Delivered', items: 'Premium Almonds', additionalItems: 0, img: '/productimages/imgi_90_premium-nuts-2048x2048.png' },
-    { id: '#CN-8902', date: 'Jun 02, 2026', total: 'د.إ720', status: 'Delivered', items: 'Pistachio Box', additionalItems: 1, img: '/productimages/imgi_19_dryfruit.png.webp' },
+    { id: '#CN-9482', date: 'Oct 24, 2026', total: 'د.إ1,299', status: 'Delivered', items: 'Royal Hamper', additionalItems: 2, img: '/productimages/dryfruits/dryfruit06.webp' },
+    { id: '#CN-9451', date: 'Sep 12, 2026', total: 'د.إ499', status: 'Processing', items: 'Afghan Figs', additionalItems: 0, img: '/productimages/dryfruits/dryfruit01.webp' },
+    { id: '#CN-9310', date: 'Aug 05, 2026', total: 'د.إ899', status: 'Delivered', items: 'Medjool Dates', additionalItems: 1, img: '/productimages/dryfruits/dryfruit04.png' },
+    { id: '#CN-9120', date: 'Jul 18, 2026', total: 'د.إ350', status: 'Delivered', items: 'Premium Almonds', additionalItems: 0, img: '/productimages/dryfruits/dryfruit06.webp' },
+    { id: '#CN-8902', date: 'Jun 02, 2026', total: 'د.إ720', status: 'Delivered', items: 'Pistachio Box', additionalItems: 1, img: '/productimages/dryfruits/dryfruit01.webp' },
   ];
 
   const paginatedOrders = recentOrders.slice((ordersPage - 1) * itemsPerPage, ordersPage * itemsPerPage);
