@@ -8,7 +8,7 @@ interface NavbarProps {
   onCartClick: () => void;
   onSearchClick: () => void;
   onWishlistClick: () => void;
-  currentPage: 'home' | 'products' | 'about' | 'contact' | 'product-detail' | 'cart' | 'wishlist' | 'checkout' | 'login' | 'account' | 'order-details';
+  currentPage: 'home' | 'products' | 'about' | 'contact' | 'product-detail' | 'cart' | 'wishlist' | 'checkout' | 'login' | 'account' | 'order-details' | 'privacy' | 'terms';
   user?: { name: string; email: string } | null;
   onLogout?: () => void;
 }

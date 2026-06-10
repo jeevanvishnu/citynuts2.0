@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowLeft, ArrowRight, LockKey, ShieldCheck, CheckCircle,
+  ArrowLeft, ArrowRight, LockKey, CheckCircle,
   CreditCard, Truck, Calendar, User, Envelope, Phone, MapPin,
   Sparkle, CircleNotch, Fingerprint, Receipt, Printer
 } from '@phosphor-icons/react';
