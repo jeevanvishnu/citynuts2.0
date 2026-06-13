@@ -213,7 +213,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-3',
-    name: 'Majdool Dates – Palestine (Large)',
+    name: 'Medjool Dates Palestine (Large)',
     category: 'Dates',
     image: '/productimages/dates/dates03.png',
     price: 380,
@@ -548,7 +548,7 @@ export const productsData: ProductData[] = [
   },
   {
     id: 'prod-dates-8',
-    name: 'Majdool Dates – Palestine (Large)',
+    name: 'Medjool Dates Palestine (Large)',
     category: 'Dates',
     image: '/productimages/dates/dates03.png',
     price: 799,
