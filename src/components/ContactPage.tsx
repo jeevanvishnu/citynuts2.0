@@ -159,7 +159,7 @@ export const ContactPage: React.FC = () => {
           <div className="w-full lg:col-span-7 h-[600px] lg:h-auto min-h-[500px] relative overflow-hidden border border-dark/5">
             <iframe 
               title="Deira Store Map"
-              src="https://maps.google.com/maps?q=ALRAFI+BUILDING+EYAL+NASIR,+Shop+No+4+%26+5+Near+Naif+Police+Station,+Sabhka,+Deira+-+Dubai&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              src="https://maps.google.com/maps?q=City+Nuts+General+Trading+LLC&t=&z=14&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -189,7 +189,7 @@ export const ContactPage: React.FC = () => {
                 </p>
               </div>
               <a 
-                href="https://maps.google.com/?q=ALRAFI+BUILDING+EYAL+NASIR+Naif+Dubai" 
+                href="https://maps.app.goo.gl/hJoU5ULfrXn8Xxoi9" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-primary text-white text-sm font-bold py-3 rounded-lg hover:bg-primary/90 transition-colors"
@@ -263,7 +263,7 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            <a href="https://maps.google.com/?q=ALRAFI+BUILDING+EYAL+NASIR+Naif+Dubai" target="_blank" rel="noopener noreferrer" className="w-full text-center py-3 rounded-xl bg-blush text-primary font-bold text-sm hover:bg-primary hover:text-white transition-colors duration-300">
+            <a href="https://maps.app.goo.gl/hJoU5ULfrXn8Xxoi9" target="_blank" rel="noopener noreferrer" className="w-full text-center py-3 rounded-xl bg-blush text-primary font-bold text-sm hover:bg-primary hover:text-white transition-colors duration-300">
               Direction →
             </a>
           </div>
