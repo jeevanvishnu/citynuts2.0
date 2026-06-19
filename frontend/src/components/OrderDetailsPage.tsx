@@ -40,7 +40,7 @@ const SpotlightCard: React.FC<{ children: React.ReactNode; className?: string }>
 };
 
 export const OrderDetailsPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'items' | 'tracking'>('items');
+  // const [activeTab, setActiveTab] = useState<'items' | 'tracking'>('items');
   const navigate = useNavigate();
   // Dummy order data
   const order = {

@@ -19,7 +19,7 @@ const initialCategories = [
 
 export const AdminCategory: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [categories, setCategories] = useState(initialCategories);
+  const [categories] = useState(initialCategories);
 
   const filteredCategories = categories.filter(category =>
     category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

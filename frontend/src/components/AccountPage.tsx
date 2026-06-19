@@ -64,7 +64,7 @@ interface AccountPageProps {
   onNavigate: (hash: string) => void;
 }
 
-export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout }) => {
+export const AccountPage: React.FC<AccountPageProps> = ({ user, onLogout, onNavigate }) => {
   const [activeTab, setActiveTab] = useState<'overview' | 'orders' | 'addresses' | 'settings'>('overview');
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);

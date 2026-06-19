@@ -10,7 +10,7 @@ export const AdminLoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
-  const { loading: isLoading, error } = useAppSelector((state) => state.adminAuth);
+  const { loading: isLoading } = useAppSelector((state) => state.adminAuth);
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {

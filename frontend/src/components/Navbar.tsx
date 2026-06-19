@@ -88,7 +88,7 @@ const megaMenuData: Record<string, MegaMenuData> = {
   }
 };
 
-export const Navbar: React.FC<NavbarProps> = ({ cartCount, wishlistCount, onCartClick, onSearchClick, onWishlistClick, currentPage, user, onLogout }) => {
+export const Navbar: React.FC<NavbarProps> = ({ cartCount, wishlistCount, onCartClick, onSearchClick, onWishlistClick, user, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -530,20 +530,23 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, wishlistCount, onCart
                 }
 
                 return (
-                  <motion.Link
+                  <motion.div
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     key={link.name}
-                    to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`font-medium text-lg border-l-2 pl-3 py-1 transition-all duration-200 ${active
-                      ? 'text-primary border-primary bg-blush/40 font-bold'
-                      : 'text-dark border-transparent hover:border-primary hover:text-primary'
-                      }`}
                   >
-                    {link.name}
-                  </motion.Link>
+                    <Link
+                      to={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block font-medium text-lg border-l-2 pl-3 py-1 transition-all duration-200 ${active
+                        ? 'text-primary border-primary bg-blush/40 font-bold'
+                        : 'text-dark border-transparent hover:border-primary hover:text-primary'
+                        }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 );
               })}
             </nav>
