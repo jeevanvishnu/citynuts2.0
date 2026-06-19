@@ -12,7 +12,11 @@ const app = express();
 
 // middleware
 app.use(cors({
-    origin:"https://citynuts2-0.vercel.app",
+    origin: [
+        "http://localhost:5173",
+        "https://citynuts2-0.vercel.app",
+        "https://citynuts2-0-git-main-jeevanvishnus-projects.vercel.app"
+    ],
     credentials:true
 }));
 app.use(express.json());
