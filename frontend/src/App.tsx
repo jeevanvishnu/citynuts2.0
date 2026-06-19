@@ -23,8 +23,11 @@ import { OrderDetailsPage } from './components/OrderDetailsPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
 import { AdminLoginPage } from './admin/AdminLoginPage';
+import { AdminDashboard } from './admin/AdminDashboard';
 import { MagnifyingGlass, X, Check } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAppDispatch } from './redux/hooks';
+import { checkAuthAdmin } from './redux/slices/adminAuthSlice';
 
 const App: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -40,11 +43,17 @@ const App: React.FC = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  // Check Admin Auth on Initial Load
+  useEffect(() => {
+    dispatch(checkAuthAdmin());
+  }, [dispatch]);
 
   // Cart operations
   const handleAddToCart = (item: CartItem) => {
@@ -127,7 +136,7 @@ const App: React.FC = () => {
   return (
     <div className="relative min-h-[100dvh] flex flex-col bg-white">
       {/* 1. Sticky Navigation Bar */}
-      {location.pathname !== '/admin-login' && (
+      {!location.pathname.startsWith('/admin') && (
         <Navbar
           cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
           wishlistCount={wishlist.length}
@@ -264,11 +273,15 @@ const App: React.FC = () => {
           <Route path="/admin-login" element={
             <AdminLoginPage />
           } />
+
+          <Route path="/admin/dashboard" element={
+            <AdminDashboard />
+          } />
         </Routes>
       </main>
 
       {/* 6. Footer Section */}
-      {location.pathname !== '/admin-login' && <Footer />}
+      {!location.pathname.startsWith('/admin') && <Footer />}
 
       {/* Premium Glassmorphic Search Overlay */}
       <AnimatePresence>
