@@ -22,7 +22,7 @@ export const loginAdmin = createAsyncThunk(
   'adminAuth/login',
   async (credentials: { email: string; password: string }, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:4000/admin/login', {
+      const response = await fetch('https://citynuts2-0.onrender.com/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials),
@@ -45,7 +45,7 @@ export const logoutAdmin = createAsyncThunk(
   'adminAuth/logout',
   async (_, { rejectWithValue }) => {
     try {
-      await fetch('http://localhost:4000/admin/logout', { 
+      await fetch('https://citynuts2-0.onrender.com/admin/logout', { 
         method: 'POST', 
         credentials: 'include' 
       });
@@ -60,7 +60,7 @@ export const checkAuthAdmin = createAsyncThunk(
   'adminAuth/checkAuth',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:4000/admin/check-auth', {
+      const response = await fetch('https://citynuts2-0.onrender.com/admin/check-auth', {
         method: 'GET',
         credentials: 'include',
       });
